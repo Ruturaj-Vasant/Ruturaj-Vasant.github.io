@@ -1,0 +1,189 @@
+.contact_wrapper svg {
+  font-size: 1em;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+// === DARK MODE STYLES ===
+
+.contact-form {
+  padding-top: 20px;
+
+  button {
+    float: right;
+    background-color: white;
+    color: #050f0b;
+  }
+
+  button:hover {
+    background-color: #5000ca;
+    color: white;
+  }
+
+  fieldset {
+    background-color: white;
+  }
+}
+
+label {
+  font-size: 1.2rem;
+  font-family: 'DomaineDispNar-Medium', sans-serif;
+}
+
+.form-flex {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 15px;
+}
+
+.form-flex .MuiFormControl-root {
+  width: 100%;
+}
+
+form {
+  width: 100% !important;
+}
+
+.body-form {
+  width: 100% !important;
+  margin-bottom: 15px !important;
+}
+
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  // Updated dark mode background to match .about-section
+  background: #0d1116;
+}
+
+.light-mode #contact {
+  // Updated light mode background to match .about-section
+  background: linear-gradient(to bottom right, #e2e2e2, #ffffff);
+  background-image: url('../images/bg-light.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact-basic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.contact-card {
+  background: rgba(15, 15, 15, 0.8);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 0 20px rgba(100, 149, 237, 0.2);
+  text-align: center;
+  max-width: 460px;
+  width: 100%;
+  color: white;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  background: none;
+}
+
+.contact-card-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.contact-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-card-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #aaa;
+  font-family: 'Inter', sans-serif;
+}
+
+.contact-card-button {
+  background: linear-gradient(135deg, #4e4eff, #6a5acd);
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.contact-card-button:hover {
+  background: linear-gradient(135deg, #6a5acd, #4e4eff);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(106, 90, 205, 0.3);
+}
+
+.contact-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+// Theme-based card title color
+
+.dark-mode .contact-card-title {
+  color: #ffffff !important;
+}
+.dark-mode .contact-card-subtitle {
+  color: #ccc;
+}
+.dark-mode .contact-card-name {
+  color: #aaa;
+}
+.dark-mode .contact-card-button {
+  background: linear-gradient(135deg, #4e4eff, #6a5acd);
+}
+// === LIGHT MODE STYLES ===
+.light-mode .contact-card {
+  background: #ffffff;
+  color: #1a1a1a;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.light-mode .contact-card-title {
+  color: #000000;
+}
+.light-mode .contact-card-subtitle {
+  color: #444;
+}
+.light-mode .contact-card-name {
+  color: #666;
+}
+
+.light-mode .contact-card-button {
+  background: linear-gradient(135deg, #5e5ee6, #8989f4);
+  color: white;
+}
+
+.light-mode .contact-card-button:hover {
+  background: linear-gradient(135deg, #8989f4, #5e5ee6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(94, 94, 230, 0.2);
+}
+
+.dark-mode {
+  background: #0d1116;
+}
