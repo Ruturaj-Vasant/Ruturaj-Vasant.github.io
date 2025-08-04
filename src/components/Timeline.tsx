@@ -18,7 +18,9 @@ function Timeline() {
       title: "Research Assistant",
       subtitle: "Wilf Family Department of Politics, NYU",
       date: "May 2025 - Present",
-      description: "Political Economy of Corporate Fraud · Python · Data Analysis · Document Parsing",
+      // description: "Political Economy of Corporate Fraud · Python · SQL · Data Analysis · Document Parsing",
+      description: "Extracting structured data from EDGAR filings using AI-assisted document parsing to compute executive compensation, tenure, and ownership. Applying game-theoretic logic to uncover patterns in leadership dynamics and potential financial fraud.",
+      tech: "Python · SQL · Data Analysis · Document Parsing · Game Theory · Statistics",
       icon: <FontAwesomeIcon icon={faBriefcase} />,
       category: "Research",
     },
@@ -26,7 +28,9 @@ function Timeline() {
       title: "Research Assistant",
       subtitle: "NYU Stern School of Business",
       date: "Apr 2025 - Present",
-      description: "Python, SQL, Data Extraction, Financial Research",
+      // description: "Python, Building Microsoft plugin, Scheduling Algorithms, Data Analysis",
+      description: "Working on a legacy C++ and MFA-based scheduling system (LEKIN) to support Python integration. Building a flexible plugin architecture that enables users to run custom scheduling algorithms using Python scripts, enhancing accessibility and extending the LEKIN system's capabilities.",
+      tech: "Python · C++ · Scheduling Algorithms · Plugin Architecture · Building Microsoft plugin",
       icon: <FontAwesomeIcon icon={faBriefcase} />,
       category: "Research",
     },
@@ -34,7 +38,7 @@ function Timeline() {
       title: "Engagement Ambassador",
       subtitle: "New York University",
       date: "Sep 2024 - Present",
-      description: "Student Engagement, Communication, Event Support",
+      tech: "Student Engagement · Communication · Event Support",
       icon: <FontAwesomeIcon icon={faBriefcase} />,
       category: "Leadership",
     },
@@ -42,23 +46,29 @@ function Timeline() {
       title: "Software Developer",
       subtitle: "Avaya",
       date: "Feb 2023 - Jun 2024",
-      description: "CI/CD, Backend Development, Query Optimization",
+      // description: "CI/CD, Query Optimization",
+      description: "Led load emulation and regression testing across 22 microservices, improving system performance by 375%. Built scalable distributed systems (Golang, Python) handling 100K+ chat and 20K+ voice transactions/hour. Reduced cloud costs via Datadog optimization ($64K saved in 3 weeks). Tackled critical issues (CPU spikes, Redis lag, Postgres bottlenecks) and implemented fixes in Java/Spring Boot.",
+      tech: "Golang · Python · Java · Spring Boot · CI/CD · Datadog · DevOps",
       icon: <FontAwesomeIcon icon={faBriefcase} />,
       category: "Industry",
     },
     {
       title: "Lead Performance Engineer",
-      subtitle: "Zensar Services",
+      subtitle: "Zensoft Services",
       date: "Jul 2022 - Jan 2023",
-      description: "Performance Testing, Team Leadership, Client Coordination",
+      // description: "Performance Testing, Team Leadership, Client Coordination",
+      description: "Directed performance engineering across 20+ projects with up to 500% speed gains. Spearheaded YAML-based BlazeMeter pipelines and CI/CD automation (deployment time cut by 76%). Mentored junior engineers, scaling team from 5 to 23. Focused on API testing, Azure DevOps, and client-side latency reduction (90%).",
+      tech: "YAML · BlazeMeter · CI/CD · Azure DevOps · API Testing · DevOps · Team Leadership, Client Coordination",
       icon: <FontAwesomeIcon icon={faBriefcase} />,
       category: "Industry",
     },
     {
       title: "Performance Engineer",
-      subtitle: "Zensar Services",
+      subtitle: "Zensoft Services",
       date: "Jun 2019 - Jun 2022",
-      description: "Load Testing, Optimization, JMeter, Test Planning, Execution, Analysis",
+      // description: "Load Testing, Optimization, JMeter, Test Planning, Execution, Analysis",
+      description: "Executed full-cycle performance testing using JMeter, Locust, and ADO pipelines. Led PI planning, workload modeling, capacity planning, and report generation. Created advanced scripts for multi-cert login, dynamic correlation, and error handling. Delivered 10x concurrency gains and mentored onboarding engineers.",
+      tech: "JMeter · Locust · ADO · Test Planning · Scripting",
       icon: <FontAwesomeIcon icon={faBriefcase} />,
       category: "Industry",
     },
@@ -66,19 +76,13 @@ function Timeline() {
       title: "Cultural Head",
       subtitle: "MIT, Pune",
       date: "Jun 2015 - Jul 2019",
-      description: "Team Leadership, Project Management, Event Planning",
+      // description: "Team Leadership, Project Management, Event Planning",
+      description: "Led a 200+ member team to deliver 15+ large-scale cultural events. Won 15+ awards for Light Art, Sand Art, Mime Plays. Performed at TEDx Pune, IITB Mood Indigo. Managed event logistics, finances, and cross-functional recruitment for creative campaigns and performances.",
+      tech: "Team Leadership · Project Management · Event Planning",
       icon: <FontAwesomeIcon icon={faBriefcase} />,
       category: "Leadership",
     },
   ];
-
-  // Helper to get preview
-  const getShortPreview = (desc: string) => {
-    if (desc.length > 80) {
-      return desc.slice(0, 80) + "...";
-    }
-    return desc;
-  };
 
   const handleToggle = (idx: number) => {
     setExpandedStates((prev) => {
@@ -97,7 +101,6 @@ function Timeline() {
             {timelineData.map((item, idx) => {
               const expanded = expandedStates[idx];
               const fullDescription = item.description;
-              const shortPreview = getShortPreview(fullDescription);
 
               return (
                 <VerticalTimelineElement
@@ -113,17 +116,22 @@ function Timeline() {
                       <span className="timeline-tag">{item.category}</span>
                     </div>
                     <h4 className="vertical-timeline-element-subtitle">{item.subtitle}</h4>
-                    <p>
-                      {expanded ? fullDescription : shortPreview}
-                      {fullDescription.length > 80 && (
-                        <span
-                          style={{ color: '#5000ca', cursor: 'pointer' }}
-                          onClick={() => handleToggle(idx)}
-                        >
-                          {expanded ? " Show less" : " Read more"}
-                        </span>
-                      )}
-                    </p>
+                    {item.tech && <p className="timeline-tech">{item.tech}</p>}
+
+                    <div style={{ textAlign: "right", marginTop: "10px" }}>
+                      <span
+                        className="toggle-icon-inline"
+                        onClick={() => handleToggle(idx)}
+                      >
+                        {expanded ? "less ▲" : "more ▼"}
+                      </span>
+                    </div>
+
+                    {expanded && (
+                      <p className="timeline-description">
+                        {fullDescription}
+                      </p>
+                    )}
                   </div>
                 </VerticalTimelineElement>
               );

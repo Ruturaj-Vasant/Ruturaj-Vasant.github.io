@@ -5,41 +5,6 @@ import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons'
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
-const labelsFirst = [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "SASS",
-    "Flask",
-    "Python",
-    "SQL",
-    "PostgreSQL",
-    "Postman"
-];
-
-const labelsSecond = [
-    "Git",
-    "GitHub Actions",
-    "Docker",
-    "AWS",
-    "Azure",
-    "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
-];
-
-const labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
-];
 
 function Expertise() {
     return (
@@ -47,6 +12,7 @@ function Expertise() {
         <div className="skills-container">
             <h1>Expertise</h1>
             <div className="skills-grid">
+                {/* 
                 <div className="skill">
                     <FontAwesomeIcon icon={faReact} size="3x"/>
                     <h3>Full Stack Web Development</h3>
@@ -81,6 +47,61 @@ function Expertise() {
                             <Chip key={index} className='chip' label={label} />
                         ))}
                     </div>
+                </div>
+                */}
+
+                <div className="skill">
+                  <FontAwesomeIcon icon={faReact} size="3x"/>
+                  <h3>Software & Performance Engineering</h3>
+                  <p>
+                    Specialized in building and optimizing scalable, distributed software solutions. Adept at identifying and resolving performance bottlenecks to ensure robust and efficient systems. I’ve also built diverse web applications from scratch, demonstrating proficiency in the SDLC process.
+                  </p>
+                  <div className="flex-chips">
+                    <span className="chip-title">Tech Stack:</span>
+                    {[
+                      "Python", "Go", "Microservices", "API Optimization", "JMeter", "Locust",
+                      "Datadog", "Splunk", "Postgres", "Redis", "React", "JavaScript", "HTML5",
+                        "SASS", "Flask", "SQL", "PostgreSQL", "Postman"
+                    ].map((label, index) => (
+                      <Chip key={index} className='chip' label={label} />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="skill">
+                  <FontAwesomeIcon icon={faDocker} size="3x"/>
+                  <h3>DevOps, SRE & Applied AI</h3>
+                  <p>
+                    Skilled in managing cloud infrastructure and automating CI/CD DevOps pipelines. Experienced in capacity planning and cost optimization efforts. Built and managed CI/CD pipelines, led cloud migrations, and implemented infrastructure-as-code across multiple environments to boost efficiency and reduce operational overhead. Passionate about exploring applied AI solutions using generative models to build smarter, user-centric applications.
+                  </p>
+                  <div className="flex-chips">
+                    <span className="chip-title">Tech Stack:</span>
+                    {[
+                      "Microsoft Azure", "AWS", "Kubernetes", "Docker", "YAML", "Jenkins",
+                      "Git", "Firebase", "Terraform", "OpenAI", "Hugging Face", "Ollama",
+                      "Pandas", "Selenium"
+                    ].map((label, index) => (
+                      <Chip key={index} className='chip' label={label} />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="skill">
+                  <FontAwesomeIcon icon={faPython} size="3x"/>
+                  <h3>Project Management & Leadership</h3>
+                  <p>
+                    Experienced in leading cross-functional teams and aligning engineering initiatives with business goals. Adept at managing timelines, mitigating risks, and facilitating collaboration between stakeholders. Focused on delivering high-impact results through strategic planning, resource optimization, and continuous team development.
+                  </p>
+                  <div className="flex-chips">
+                    <span className="chip-title">Core Skills:</span>
+                    {[
+                      "Agile Methodologies", "Stakeholder Communication", "Risk Assessment", "Resource Allocation",
+                      "Cost Optimization", "Capacity Planning", "Team Mentorship", "Strategic Planning",
+                      "Data-Driven Decision Making"
+                    ].map((label, index) => (
+                      <Chip key={index} className='chip' label={label} />
+                    ))}
+                  </div>
                 </div>
             </div>
         </div>

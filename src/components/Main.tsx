@@ -44,7 +44,7 @@ function Main() {
           <div className="header">
             <h1>Ruturaj Tambe</h1>
             <p className="tagline">
-              Software Engineer | Performance Engineer
+              Software Engineer 
             </p>
             <div className="social_icons">
               <a href="https://github.com/Ruturaj-Vasant" target="_blank" rel="noreferrer"><GitHubIcon/></a>

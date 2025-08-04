@@ -1,14 +1,15 @@
 import React from "react";
-import mock01 from '../assets/images/mock01.png';
-import mock02 from '../assets/images/mock02.png';
-import mock03 from '../assets/images/mock03.png';
-import mock04 from '../assets/images/mock04.png';
-import mock05 from '../assets/images/mock05.png';
-import mock06 from '../assets/images/mock06.png';
-import mock07 from '../assets/images/mock07.png';
-import mock08 from '../assets/images/mock08.png';
-import mock09 from '../assets/images/mock09.png';
-import mock10 from '../assets/images/mock10.png';
+import GitHubIcon from '@mui/icons-material/GitHub';
+// import mock01 from '../assets/images/mock01.png';
+// import mock02 from '../assets/images/mock02.png';
+// import mock03 from '../assets/images/mock03.png';
+// import mock04 from '../assets/images/mock04.png';
+// import mock05 from '../assets/images/mock05.png';
+// import mock06 from '../assets/images/mock06.png';
+// import mock07 from '../assets/images/mock07.png';
+// import mock08 from '../assets/images/mock08.png';
+// import mock09 from '../assets/images/mock09.png';
+// import mock10 from '../assets/images/mock10.png';
 import '../assets/styles/Project.scss';
 
 function Project() {
@@ -17,54 +18,171 @@ function Project() {
         <h1>Personal Projects</h1>
         <div className="projects-grid">
             <div className="project">
-                <a href="https://www.filmate.club/" target="_blank" rel="noreferrer"><img src={mock10} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.filmate.club/" target="_blank" rel="noreferrer"><h2>Filmate AI</h2></a>
-                <p>Developed movie finder app with semantic search and sentiment analysis using OpenAI GPT-3.5 Turbo, Qdrant, React, and Flask.</p>
+                <div className="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/FgY6r2kxnMY?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0&vq=hd1080&loop=1&playlist=FgY6r2kxnMY"
+                        title="Coupon Management System Demo"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                        allowFullScreen
+                    ></iframe>
+                </div>
+                <h2>
+                    <a href="https://github.com/Ruturaj-Vasant/Coupon-Management-System" target="_blank" rel="noreferrer" style={{ verticalAlign: 'middle', marginRight: '0.5rem' }}>
+                        <GitHubIcon fontSize="small" />
+                    </a>
+                    Coupon Management System
+                </h2>
+                <p>
+                    Digital pass generation system integrated with PassKit API for Apple Wallet, offering real-time form validation, usage tracking, and Google Sheets integration. Supports multiple service types and expiration date validation. Designed for both iOS and Android, with email notifications and cross-platform compatibility.
+                </p>
+                <div className="tags">
+                  <p><strong>Categories:</strong> <span className="tag category">Personal</span> <span className="tag category">Automation</span></p>
+                  <p><strong>Technologies:</strong> <span className="tag tech">JavaScript</span> <span className="tag tech">Google Apps Script</span> <span className="tag tech">PassKit</span> <span className="tag tech">Apple Wallet</span></p>
+                </div>
             </div>
             <div className="project">
-                <a href="https://yujisatojr.itch.io/highspeedchase" target="_blank" rel="noreferrer"><img src={mock09} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://yujisatojr.itch.io/highspeedchase" target="_blank" rel="noreferrer"><h2>High Speed Chase</h2></a>
-                <p>Designed, developed, and launched a 3D multiplayer racing game with C# and Unity. This is available on Itch.io for gamers worldwide to enjoy.</p>
+                {/* <img src="https://raw.githubusercontent.com/Ruturaj-Vasant/Political-Economy-Of-Corporate-Fraud/main/project-screenshot.jpg" alt="Corporate Fraud Project Screenshot" className="zoom" width="100%" /> */}
+                <h2>
+                    <a href="https://github.com/Ruturaj-Vasant/Political-Economy-Of-Corporate-Fraud" target="_blank" rel="noreferrer" style={{ verticalAlign: 'middle', marginRight: '0.5rem' }}>
+                        <GitHubIcon fontSize="small" />
+                    </a>
+                    Political Economy of Corporate Fraud
+                </h2>
+                <p>
+                    Developed as part of a Research Assistantship at NYU's Wilf Family Department of Politics, this project investigates the intersection of corporate governance and fraud. It focuses on executive compensation, tenure, turnover, and governance metrics using structured data extraction from SEC filings and WRDS. The system automates data pulls, preprocessing, and analytical queries via SQL and Python.
+                </p>
+                <div className="tags">
+                    <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Research</span></p>
+                    <p><strong>Technologies:</strong> <span className="tag tech">Python</span> <span className="tag tech">SQL</span> <span className="tag tech">WRDS</span></p>
+                </div>
             </div>
             <div className="project">
-                <a href="https://yujisatojr.itch.io/spacecraft" target="_blank" rel="noreferrer"><img src={mock08} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://yujisatojr.itch.io/spacecraft" target="_blank" rel="noreferrer"><h2>Astro Raiders</h2></a>
-                <p>Developed and released a 2D shooting game with C# and Unity. This project is hosted on the Itch.io public marketplace.</p>
+                {/* <img src="https://raw.githubusercontent.com/Ruturaj-Vasant/Streakmate-Googleappscript-Automated-Task-Journal/main/streakmate-screenshot.jpg" alt="StreakMate Screenshot" className="zoom" width="100%" /> */}
+                <h2>
+                    <a href="https://github.com/Ruturaj-Vasant/Streakmate-Googleappscript-Automated-Task-Journal" target="_blank" rel="noreferrer" style={{ verticalAlign: 'middle', marginRight: '0.5rem' }}>
+                        <GitHubIcon fontSize="small" />
+                    </a>
+                    StreakMate: Automated Task Journal
+                </h2>
+                <p>
+                    A lightweight, customizable habit and task tracker built with Google Apps Script and Google Sheets. Supports habit streak tracking, recurring tasks, automated reminders, inline comments, cumulative counters, and analytics—all fully integrated into a spreadsheet-based interface.
+                </p>
+                <div className="tags">
+                    <p><strong>Categories:</strong> <span className="tag category">Personal</span> <span className="tag category">Productivity</span></p>
+                    <p><strong>Technologies:</strong> <span className="tag tech">Google Apps Script</span> <span className="tag tech">HTML</span> <span className="tag tech">JavaScript</span></p>
+                </div>
             </div>
             <div className="project">
-                <a href="https://www.datumlearn.com/" target="_blank" rel="noreferrer"><img src={mock07} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.datumlearn.com/" target="_blank" rel="noreferrer"><h2>Datum: Integrated Learning Platform</h2></a>
-                <p>This is an online educational platform that provides high-quality, data science-focused learning resources in the Japanese language. I created the entire platform from scratch using Ruby on Rails.</p>
+                {/* <img src="https://raw.githubusercontent.com/Ruturaj-Vasant/SystematicTrading_DynamicExposure/main/project-screenshot.jpg" alt="Systematic Trading Project Screenshot" className="zoom" width="100%" /> */}
+                <h2>
+                    <a href="https://github.com/Ruturaj-Vasant/SystematicTrading_DynamicExposure" target="_blank" rel="noreferrer" style={{ verticalAlign: 'middle', marginRight: '0.5rem' }}>
+                        <GitHubIcon fontSize="small" />
+                    </a>
+                    Systematic Trading: Dynamic Exposure Framework
+                </h2>
+                <p>
+                    An ML-driven backtesting framework analyzing SPY trading strategies using volatility signals, trend filters, and technical indicators. The framework compares baseline, trend-conditioned volatility scaling (TCVS), and dynamic exposure strategies against mean reversion models. It includes notebooks, performance metrics, and visualizations to optimize trading logic.
+                </p>
+                <div className="tags">
+                    <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Finance</span></p>
+                    <p><strong>Technologies:</strong> <span className="tag tech">Python</span> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Pandas</span> <span className="tag tech">Matplotlib</span></p>
+                </div>
             </div>
             <div className="project">
-                <a href="http://www.wemanage.jp/" target="_blank" rel="noreferrer"><img src={mock06} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="http://www.wemanage.jp/" target="_blank" rel="noreferrer"><h2>WeManage: Real Estate Asset Management</h2></a>
-                <p>This mobile application allows realtors in Japan to securely manage their property information and view future income predictions. This app is built with Ruby on Rails and JavaScript.</p>
+                {/* <img src="https://raw.githubusercontent.com/Ruturaj-Vasant/EngagePro-Outreach-Tracker/main/project-screenshot.jpg" alt="EngagePro Outreach Tracker Screenshot" className="zoom" width="100%" /> */}
+                <h2>
+                    <a href="https://github.com/Ruturaj-Vasant/EngagePro-Outreach-Tracker" target="_blank" rel="noreferrer" style={{ verticalAlign: 'middle', marginRight: '0.5rem' }}>
+                        <GitHubIcon fontSize="small" />
+                    </a>
+                    EngagePro Outreach Tracker
+                </h2>
+                <p>
+                    A personalized email and outreach automation tool built on Google Apps Script. Helps students and professionals manage outreach campaigns by sending emails, embedding tracking pixels, and logging interaction data like opens and responses. Originally built for professor/recruiter outreach, it’s also usable by sales teams and job seekers.
+                </p>
+                <div className="tags">
+                    <p><strong>Categories:</strong> <span className="tag category">Personal</span> <span className="tag category">Automation</span></p>
+                    <p><strong>Technologies:</strong> <span className="tag tech">Google Apps Script</span> <span className="tag tech">JavaScript</span> <span className="tag tech">HTML</span></p>
+                </div>
             </div>
             <div className="project">
-                <a href="https://www.byuh.edu/covid-19-case-management" target="_blank" rel="noreferrer"><img src={mock05} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.byuh.edu/covid-19-case-management" target="_blank" rel="noreferrer"><h2>COVID-19 Case Management</h2></a>
-                <p>Built official charts for COVID/vaccination tracking for an educational institution using JavaScript and the Google Sheets API v4. The dashboard served the university's leadership in their decision-making processes.</p>
+                {/* <img src="https://raw.githubusercontent.com/Ruturaj-Vasant/Systematic-Investing-Risk-Analysis/main/project-screenshot.jpg" alt="Systematic Investing Risk Analysis Screenshot" className="zoom" width="100%" /> */}
+                <h2>
+                    <a href="https://github.com/Ruturaj-Vasant/Systematic-Investing-Risk-Analysis" target="_blank" rel="noreferrer" style={{ verticalAlign: 'middle', marginRight: '0.5rem' }}>
+                        <GitHubIcon fontSize="small" />
+                    </a>
+                    Systematic Investing: Risk Analysis
+                </h2>
+                <p>
+                    Analyzed risk and performance of three financial time series over 2,000 days. Computed correlations, drawdowns, and performance metrics under equal and inverse volatility-weighted allocations. Built a predictive model to forecast one asset using others, applying systematic investing principles to enhance portfolio risk-adjusted returns.
+                </p>
+                <div className="tags">
+                    <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Finance</span></p>
+                    <p><strong>Technologies:</strong> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Excel</span> <span className="tag tech">Quantitative Analysis</span></p>
+                </div>
             </div>
             <div className="project">
-                <a href="https://github.com/yujisatojr/multi-reg-analysis" target="_blank" rel="noreferrer"><img src={mock04} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/yujisatojr/multi-reg-analysis" target="_blank" rel="noreferrer"><h2>Multiple Regression Property Analysis</h2></a>
-                <p>Analyzed the real estate market in Japan and predicted property prices by implementing statistical methods such as OLS and multi-regression analysis. This project leveraged Python and various libraries such as Pandas, NumPy, Matplotlib, and Scikit-Learn.</p>
+                {/* <img src="https://raw.githubusercontent.com/Ruturaj-Vasant/Systematic-Trend-Following/main/project-screenshot.jpg" alt="Trend Following Project Screenshot" className="zoom" width="100%" /> */}
+                <h2>
+                    <a href="https://github.com/Ruturaj-Vasant/Systematic-Trend-Following" target="_blank" rel="noreferrer" style={{ verticalAlign: 'middle', marginRight: '0.5rem' }}>
+                        <GitHubIcon fontSize="small" />
+                    </a>
+                    Systematic Trend-Following Strategies
+                </h2>
+                <p>
+                    Developed and evaluated multiple trend-following strategies using moving average crossovers and breakouts across fixed income, currency, and equity markets. Performance measured using Sharpe/Sortino ratios, drawdowns, and volatility-weighted combinations. The project includes inverse volatility methods and improvements using EMA-based filters.
+                </p>
+                <div className="tags">
+                    <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Finance</span></p>
+                    <p><strong>Technologies:</strong> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Excel</span> <span className="tag tech">Quantitative Finance</span></p>
+                </div>
             </div>
             <div className="project">
-                <a href="https://holokai.byuh.edu/programs-of-study" target="_blank" rel="noreferrer"><img src={mock03} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://holokai.byuh.edu/programs-of-study" target="_blank" rel="noreferrer"><h2>Programs of Study</h2></a>
-                <p>Designed and developed a custom component for a CMS-based platform (e.g., 'Brightspot') using Java, Handlebars, and LESS. University students can find their majors of interest through this module.</p>
+                {/* <img src="https://raw.githubusercontent.com/Ruturaj-Vasant/SNP500-Volatility-Vs-Returns/main/project-screenshot.jpg" alt="S&amp;P 500 Volatility vs Returns Screenshot" className="zoom" width="100%" /> */}
+                <h2>
+                    <a href="https://github.com/Ruturaj-Vasant/SNP500-Volatility-Vs-Returns" target="_blank" rel="noreferrer" style={{ verticalAlign: 'middle', marginRight: '0.5rem' }}>
+                        <GitHubIcon fontSize="small" />
+                    </a>
+                    S&amp;P 500: Volatility vs Returns
+                </h2>
+                <p>
+                    Analyzed the relationship between S&amp;P 500 volatility and returns using normalized indicators across historical data. Studied concurrent and lagged volatility effects, segmented results into quintiles, and evaluated potential predictive signals. Applied systematic investing techniques to assess behavioral patterns and generate actionable insights.
+                </p>
+                <div className="tags">
+                    <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Finance</span></p>
+                    <p><strong>Technologies:</strong> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Excel</span> <span className="tag tech">Data Analysis</span></p>
+                </div>
             </div>
             <div className="project">
-                <a href="https://hookele.byuh.edu/transfer-evaluation-guidelines-and-matrix" target="_blank" rel="noreferrer"><img src={mock02} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://hookele.byuh.edu/transfer-evaluation-guidelines-and-matrix" target="_blank" rel="noreferrer"><h2>Transfer Evaluation Matrix</h2></a>
-                <p>Created an interactive CSV table generator with Java, Handlebars, and LESS. This project helps transfer students to quickly identify eligible credits.</p>
+                {/* <img src="https://raw.githubusercontent.com/Ruturaj-Vasant/Finance_Nifty50_Most_Volatile_Days/main/project-screenshot.jpg" alt="Nifty50 Volatility Project Screenshot" className="zoom" width="100%" /> */}
+                <h2>
+                    <a href="https://github.com/Ruturaj-Vasant/Finance_Nifty50_Most_Volatile_Days" target="_blank" rel="noreferrer" style={{ verticalAlign: 'middle', marginRight: '0.5rem' }}>
+                        <GitHubIcon fontSize="small" />
+                    </a>
+                    Finance: Nifty50 Most Volatile Days
+                </h2>
+                <p>
+                    This exploratory project analyzes historical Nifty 50 stock data to assess market volatility. It computes daily returns, rolling volatility, and Z-scores using Python, identifying historically extreme market days. Provides insights into behavior of Indian financial markets and demonstrates data cleaning, return computation, and volatility filtering techniques.
+                </p>
+                <div className="tags">
+                    <p><strong>Categories:</strong> <span className="tag category">Personal</span> <span className="tag category">Finance</span></p>
+                    <p><strong>Technologies:</strong> <span className="tag tech">Python</span> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Excel</span> <span className="tag tech">Data Analysis</span></p>
+                </div>
             </div>
             <div className="project">
-                <a href="https://github.com/yujisatojr/submeowrine" target="_blank" rel="noreferrer"><img src={mock01} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/yujisatojr/submeowrine" target="_blank" rel="noreferrer"><h2>Submeowrine</h2></a>
-                <p>Developed and released an Android mobile application using Java and Android Studio that runs a 2D shooting game.</p>
+                {/* <img src="https://raw.githubusercontent.com/Ruturaj-Vasant/Flask-Cluster-DNS_App/main/project-screenshot.jpg" alt="Distributed Flask App Screenshot" className="zoom" width="100%" /> */}
+                <h2>
+                    <a href="https://github.com/Ruturaj-Vasant/Flask-Cluster-DNS_App" target="_blank" rel="noreferrer" style={{ verticalAlign: 'middle', marginRight: '0.5rem' }}>
+                        <GitHubIcon fontSize="small" />
+                    </a>
+                    Distributed System with Flask
+                </h2>
+                <p>
+                    A simulated distributed system built with Flask comprising three services: an Auth Server for domain registration, a Fibonacci Server for computing sequences, and a User Server for coordinating service requests. Fully Dockerized and configured for Kubernetes deployment, demonstrating container orchestration and inter-service communication.
+                </p>
+                <div className="tags">
+                    <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Systems</span></p>
+                    <p><strong>Technologies:</strong> <span className="tag tech">Python</span> <span className="tag tech">Flask</span> <span className="tag tech">Docker</span> <span className="tag tech">Kubernetes</span></p>
+                </div>
             </div>
         </div>
     </div>

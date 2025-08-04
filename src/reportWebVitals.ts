@@ -1,3 +1,5 @@
+
+
 import { ReportHandler } from 'web-vitals';
 
 const reportWebVitals = (onPerfEntry?: ReportHandler) => {
@@ -12,4 +14,8 @@ const reportWebVitals = (onPerfEntry?: ReportHandler) => {
   }
 };
 
-export default reportWebVitals;
+const sendToAnalytics = ({ name, delta, id }: { name: string; delta: number; id: string }) => {
+  // Hook for custom analytics logic
+};
+
+export { reportWebVitals, sendToAnalytics };

@@ -40,3 +40,30 @@
         color: rgb(39, 40, 34);
     }
 }
+
+.timeline-tech {
+    font-style: normal;
+    font-size: 0.9em;
+    color: #666;
+    margin: 6px 0 10px 0;
+    line-height: 1.4;
+}
+
+.toggle-icon-inline {
+    font-size: 0.85em;
+    color: #444;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+.toggle-icon-inline:hover {
+    color: #222;
+    text-decoration: underline;
+}
+
+.timeline-description {
+  margin-top: 8px;
+  color: #272822;
+}
