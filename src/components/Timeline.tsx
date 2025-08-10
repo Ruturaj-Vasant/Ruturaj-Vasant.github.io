@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
@@ -8,9 +7,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/Timeline.scss'
 
 function Timeline() {
-  // For each timeline element, maintain a separate expanded state
-  // We'll use an array for expanded states
-  const [expandedStates, setExpandedStates] = useState<boolean[]>(Array(7).fill(false));
+  // Removed expanded state logic
 
   // Timeline data
   const timelineData = [
@@ -84,13 +81,7 @@ function Timeline() {
     },
   ];
 
-  const handleToggle = (idx: number) => {
-    setExpandedStates((prev) => {
-      const copy = [...prev];
-      copy[idx] = !copy[idx];
-      return copy;
-    });
-  };
+  // Removed handleToggle function
 
   return (
     <div className="timeline-root">
@@ -98,44 +89,29 @@ function Timeline() {
         <div className="items-container">
           <h1>Career History</h1>
           <VerticalTimeline>
-            {timelineData.map((item, idx) => {
-              const expanded = expandedStates[idx];
-              const fullDescription = item.description;
-
-              return (
-                <VerticalTimelineElement
-                  key={idx}
-                  className="vertical-timeline-element--work"
-                  date={item.date}
-                  iconStyle={{ background: '#5000ca', color: '#fff' }}
-                  icon={item.icon}
-                >
-                  <div>
-                    <div className="timeline-header">
-                      <h3 className="vertical-timeline-element-title">{item.title}</h3>
-                      <span className="timeline-tag">{item.category}</span>
-                    </div>
-                    <h4 className="vertical-timeline-element-subtitle">{item.subtitle}</h4>
-                    {item.tech && <p className="timeline-tech">{item.tech}</p>}
-
-                    <div style={{ textAlign: "right", marginTop: "10px" }}>
-                      <span
-                        className="toggle-icon-inline"
-                        onClick={() => handleToggle(idx)}
-                      >
-                        {expanded ? "less ▲" : "more ▼"}
-                      </span>
-                    </div>
-
-                    {expanded && (
-                      <p className="timeline-description">
-                        {fullDescription}
-                      </p>
-                    )}
+            {timelineData.map((item, idx) => (
+              <VerticalTimelineElement
+                key={idx}
+                className="vertical-timeline-element--work"
+                date={item.date}
+                iconStyle={{ background: '#5000ca', color: '#fff' }}
+                icon={item.icon}
+              >
+                <div>
+                  <div className="timeline-header">
+                    <h3 className="vertical-timeline-element-title">{item.title}</h3>
+                    <span className="timeline-tag">{item.category}</span>
                   </div>
-                </VerticalTimelineElement>
-              );
-            })}
+                  <h4 className="vertical-timeline-element-subtitle">{item.subtitle}</h4>
+                  {item.tech && <p className="timeline-tech">{item.tech}</p>}
+                  {item.description && (
+                    <p className="timeline-description">
+                      {item.description}
+                    </p>
+                  )}
+                </div>
+              </VerticalTimelineElement>
+            ))}
           </VerticalTimeline>
         </div>
       </div>
