@@ -207,6 +207,45 @@
   --default-x: 50%;
   --default-y: 50%;
 }
+
+/* ===== Fixed Social Icons Rail (left side) ===== */
+/* Target only the top-level rail (sibling of .background-glow / .about-section) */
+.container > .social_icons {
+  position: fixed;
+  left: 24px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 3;
+  background: transparent;
+  color: inherit; /* color is set by theme rules below */
+}
+.container > .social_icons::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin-top: 12px;
+  background: currentColor;
+  opacity: 0.35;
+}
+.container > .social_icons a {
+  display: inline-flex;
+  text-decoration: none;
+  opacity: 1;
+  transition: transform 0.15s ease, opacity 0.15s ease, color 0.15s ease;
+  color: inherit;
+}
+.container > .social_icons a:hover {
+  transform: translateY(-2px);
+}
+.container > .social_icons svg {
+  font-size: 1.8em;
+  color: inherit;
+  fill: currentColor;
+}
 .light-mode .social_icons svg:hover,
 .light-mode .mobile_social_icons svg:hover {
   color: #7f7fff; /* softer lavender */
@@ -219,6 +258,70 @@
   filter: drop-shadow(0 0 6px rgba(102, 204, 255, 0.6));
 }
 
-.dark-mode {
-  background: #0d1116;
+
+
+
+/* Social rail and email rail color for dark mode */
+.dark-mode .social_icons,
+.dark-mode .social_icons a,
+.dark-mode .social_icons svg,
+.dark-mode .email-rail,
+.dark-mode .email-rail a,
+.dark-mode .email-rail svg {
+  color: #ffffff !important;
+}
+
+/* Social rail and email rail color for light mode */
+.light-mode .social_icons,
+.light-mode .social_icons a,
+.light-mode .social_icons svg,
+.light-mode .email-rail,
+.light-mode .email-rail a,
+.light-mode .email-rail svg {
+  color: #000000 !important;
+}
+
+/* ===== Fixed Email Rail (desktop) ===== */
+.email-rail {
+  position: fixed;
+  right: 24px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  background: transparent;
+}
+
+.email-rail a {
+  writing-mode: vertical-rl;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  opacity: 1;
+  transition: transform 0.15s ease, opacity 0.15s ease, color 0.15s ease;
+  color: inherit;
+}
+
+.email-rail a:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.email-rail::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin-top: 12px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+/* Theme-aware colors for social_icons and email-rail */
+
+/* Remove duplicate theme rules for rails */
+
+/* Hide on tablets/phones */
+@media (max-width:768px) {
+  .social_icons, .email-rail { display: none; }
 }

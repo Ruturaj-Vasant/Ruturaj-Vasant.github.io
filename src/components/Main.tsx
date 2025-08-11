@@ -36,6 +36,19 @@ function Main() {
   return (
     <div className="container">
       <div className={`background-glow ${theme}-mode`} />
+      {/* Fixed vertical social icons rail (desktop only) */}
+      <div className={`social_icons ${theme}-mode`}>
+        <a href="https://github.com/Ruturaj-Vasant" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <GitHubIcon />
+        </a>
+        <a href="https://www.linkedin.com/in/ruturaj-tambe-929364169/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <LinkedInIcon />
+        </a>
+      </div>
+      {/* Fixed vertical email rail (desktop only) */}
+      <div className={`email-rail ${theme}-mode`}>
+        <a href="mailto:rvt2018@nyu.edu" aria-label="Email Ruturaj">rvt2018@nyu.edu</a>
+      </div>
       <div className="about-section">
         <div className="image-wrapper">
           <img src={profileImage} alt="Ruturaj Tambe" />
