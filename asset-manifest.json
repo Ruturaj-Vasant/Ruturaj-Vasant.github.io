@@ -1,15 +1,40 @@
 {
   "files": {
-    "main.css": "/static/css/main.07fa1776.css",
-    "main.js": "/static/js/main.d15a667e.js",
+    "main.css": "/static/css/main.f11a7da6.css",
+    "main.js": "/static/js/main.54413b23.js",
+    "static/media/Engage_Pro_tracker.png": "/static/media/Engage_Pro_tracker.4b4e0a49d78267d48eac.png",
+    "static/media/Political_Economy_of_Corporate_Fraud.png": "/static/media/Political_Economy_of_Corporate_Fraud.971970eaa847ab6f81a1.png",
+    "static/media/Lekin_1.png": "/static/media/Lekin_1.69b283ad9cd4178a690b.png",
+    "static/media/DynamicExposureFramework.png": "/static/media/DynamicExposureFramework.37903187434256652848.png",
     "static/media/bg-light.png": "/static/media/bg-light.bac0efb485244a522981.png",
+    "static/media/Nifty_50_Most_Volatile_days.jpeg": "/static/media/Nifty_50_Most_Volatile_days.d272f8fa1ade9e7bf13b.jpeg",
+    "static/media/Lekin_2.png": "/static/media/Lekin_2.869eccd22d263e2497c7.png",
+    "static/media/Streakmate6.png": "/static/media/Streakmate6.7789fefe555d7d96fcb2.png",
+    "static/media/Streakmate1.png": "/static/media/Streakmate1.2f61009f421606bcd76b.png",
+    "static/media/Streakmate5.png": "/static/media/Streakmate5.78714403857cc3274d7b.png",
+    "static/media/Trend-3.png": "/static/media/Trend-3.0d7d629c7fa83e978e21.png",
+    "static/media/Streakmate4.png": "/static/media/Streakmate4.61d484b7d2c390912094.png",
+    "static/media/Streakmate2.png": "/static/media/Streakmate2.7abf187d7817f556e9e7.png",
+    "static/media/Streakmate3.png": "/static/media/Streakmate3.3c6745fbeb9ec36cb64a.png",
     "static/media/ProfilePic.jpg": "/static/media/ProfilePic.44cabd1ebaa1e8da6d40.jpg",
+    "static/media/Systematic-Investing-Risk-Analysis-3.png": "/static/media/Systematic-Investing-Risk-Analysis-3.e80e091c62edd1c11500.png",
+    "static/media/Systematic-Investing-Risk-Analysis-5.png": "/static/media/Systematic-Investing-Risk-Analysis-5.b2b8e08cad517e276082.png",
+    "static/media/Systematic-Investing-Risk-Analysis-2.png": "/static/media/Systematic-Investing-Risk-Analysis-2.4618a1aa437f063329b0.png",
+    "static/media/Systematic-Investing-Risk-Analysis-4.png": "/static/media/Systematic-Investing-Risk-Analysis-4.0d758fe8370efd4dd057.png",
+    "static/media/Trend-1.png": "/static/media/Trend-1.9b7328f622885584288a.png",
+    "static/media/SNP500-Vol-1.png": "/static/media/SNP500-Vol-1.97b9aaa5a23997bf6a22.png",
+    "static/media/Trend-2.png": "/static/media/Trend-2.bbca868bd7ad49639779.png",
+    "static/media/Systematic-Investing-Risk-Analysis-6.png": "/static/media/Systematic-Investing-Risk-Analysis-6.8d08070667751cbb4f5d.png",
+    "static/media/SNP500-Vol-4.png": "/static/media/SNP500-Vol-4.a4c4066aeb377e72af0c.png",
+    "static/media/SNP500-Vol-3.png": "/static/media/SNP500-Vol-3.48adc5013b0e4ff35c64.png",
+    "static/media/SNP500-Vol-2.png": "/static/media/SNP500-Vol-2.d6fee40a84ef1b992120.png",
+    "static/media/Systematic-Investing-Risk-Analysis-1.png": "/static/media/Systematic-Investing-Risk-Analysis-1.428b6065cee8ddd769e3.png",
     "index.html": "/index.html",
-    "main.07fa1776.css.map": "/static/css/main.07fa1776.css.map",
-    "main.d15a667e.js.map": "/static/js/main.d15a667e.js.map"
+    "main.f11a7da6.css.map": "/static/css/main.f11a7da6.css.map",
+    "main.54413b23.js.map": "/static/js/main.54413b23.js.map"
   },
   "entrypoints": [
-    "static/css/main.07fa1776.css",
-    "static/js/main.d15a667e.js"
+    "static/css/main.f11a7da6.css",
+    "static/js/main.54413b23.js"
   ]
 }
