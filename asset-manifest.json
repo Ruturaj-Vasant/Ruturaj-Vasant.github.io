@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f11a7da6.css",
-    "main.js": "/static/js/main.54413b23.js",
+    "main.css": "/static/css/main.b6d3ebc2.css",
+    "main.js": "/static/js/main.9ae34aa1.js",
     "static/media/Engage_Pro_tracker.png": "/static/media/Engage_Pro_tracker.4b4e0a49d78267d48eac.png",
     "static/media/Political_Economy_of_Corporate_Fraud.png": "/static/media/Political_Economy_of_Corporate_Fraud.971970eaa847ab6f81a1.png",
     "static/media/Lekin_1.png": "/static/media/Lekin_1.69b283ad9cd4178a690b.png",
@@ -30,11 +30,11 @@
     "static/media/SNP500-Vol-2.png": "/static/media/SNP500-Vol-2.d6fee40a84ef1b992120.png",
     "static/media/Systematic-Investing-Risk-Analysis-1.png": "/static/media/Systematic-Investing-Risk-Analysis-1.428b6065cee8ddd769e3.png",
     "index.html": "/index.html",
-    "main.f11a7da6.css.map": "/static/css/main.f11a7da6.css.map",
-    "main.54413b23.js.map": "/static/js/main.54413b23.js.map"
+    "main.b6d3ebc2.css.map": "/static/css/main.b6d3ebc2.css.map",
+    "main.9ae34aa1.js.map": "/static/js/main.9ae34aa1.js.map"
   },
   "entrypoints": [
-    "static/css/main.f11a7da6.css",
-    "static/js/main.54413b23.js"
+    "static/css/main.b6d3ebc2.css",
+    "static/js/main.9ae34aa1.js"
   ]
 }
