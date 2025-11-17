@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.853de748.css",
-    "main.js": "/static/js/main.36110053.js",
+    "main.css": "/static/css/main.3467c47d.css",
+    "main.js": "/static/js/main.138c3b14.js",
     "static/media/Engage_Pro_tracker.png": "/static/media/Engage_Pro_tracker.4b4e0a49d78267d48eac.png",
     "static/media/Political_Economy_of_Corporate_Fraud.png": "/static/media/Political_Economy_of_Corporate_Fraud.971970eaa847ab6f81a1.png",
     "static/media/imagenet-performance-benchmark.png": "/static/media/imagenet-performance-benchmark.2e92a66d4c463d51d849.png",
@@ -35,11 +35,11 @@
     "static/media/ds-generic.svg": "/static/media/ds-generic.faff49395a0e26aad852076dd3cad285.svg",
     "static/media/coupon-video-thumb.svg": "/static/media/coupon-video-thumb.b2bbea2a92a50b47f125b6336ec0ff42.svg",
     "index.html": "/index.html",
-    "main.853de748.css.map": "/static/css/main.853de748.css.map",
-    "main.36110053.js.map": "/static/js/main.36110053.js.map"
+    "main.3467c47d.css.map": "/static/css/main.3467c47d.css.map",
+    "main.138c3b14.js.map": "/static/js/main.138c3b14.js.map"
   },
   "entrypoints": [
-    "static/css/main.853de748.css",
-    "static/js/main.36110053.js"
+    "static/css/main.3467c47d.css",
+    "static/js/main.138c3b14.js"
   ]
 }
