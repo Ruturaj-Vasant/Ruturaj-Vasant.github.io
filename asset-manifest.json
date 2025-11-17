@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.b6d3ebc2.css",
-    "main.js": "/static/js/main.41e56850.js",
+    "main.css": "/static/css/main.6b5dc949.css",
+    "main.js": "/static/js/main.b2eed817.js",
     "static/media/Engage_Pro_tracker.png": "/static/media/Engage_Pro_tracker.4b4e0a49d78267d48eac.png",
     "static/media/Political_Economy_of_Corporate_Fraud.png": "/static/media/Political_Economy_of_Corporate_Fraud.971970eaa847ab6f81a1.png",
+    "static/media/imagenet-performance-benchmark.png": "/static/media/imagenet-performance-benchmark.2e92a66d4c463d51d849.png",
     "static/media/Lekin_1.png": "/static/media/Lekin_1.69b283ad9cd4178a690b.png",
     "static/media/DynamicExposureFramework.png": "/static/media/DynamicExposureFramework.37903187434256652848.png",
     "static/media/bg-light.png": "/static/media/bg-light.bac0efb485244a522981.png",
     "static/media/Nifty_50_Most_Volatile_days.jpeg": "/static/media/Nifty_50_Most_Volatile_days.d272f8fa1ade9e7bf13b.jpeg",
+    "static/media/AI-in-container.png": "/static/media/AI-in-container.08879b5a5a00fa63aa7a.png",
     "static/media/Lekin_2.png": "/static/media/Lekin_2.869eccd22d263e2497c7.png",
     "static/media/Streakmate6.png": "/static/media/Streakmate6.7789fefe555d7d96fcb2.png",
     "static/media/Streakmate1.png": "/static/media/Streakmate1.2f61009f421606bcd76b.png",
@@ -29,12 +31,15 @@
     "static/media/SNP500-Vol-3.png": "/static/media/SNP500-Vol-3.48adc5013b0e4ff35c64.png",
     "static/media/SNP500-Vol-2.png": "/static/media/SNP500-Vol-2.d6fee40a84ef1b992120.png",
     "static/media/Systematic-Investing-Risk-Analysis-1.png": "/static/media/Systematic-Investing-Risk-Analysis-1.428b6065cee8ddd769e3.png",
+    "static/media/gpu-creation-script.svg": "/static/media/gpu-creation-script.d92378af59d75fa1f4db77e8d4260efc.svg",
+    "static/media/ds-generic.svg": "/static/media/ds-generic.faff49395a0e26aad852076dd3cad285.svg",
+    "static/media/coupon-video-thumb.svg": "/static/media/coupon-video-thumb.b2bbea2a92a50b47f125b6336ec0ff42.svg",
     "index.html": "/index.html",
-    "main.b6d3ebc2.css.map": "/static/css/main.b6d3ebc2.css.map",
-    "main.41e56850.js.map": "/static/js/main.41e56850.js.map"
+    "main.6b5dc949.css.map": "/static/css/main.6b5dc949.css.map",
+    "main.b2eed817.js.map": "/static/js/main.b2eed817.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6d3ebc2.css",
-    "static/js/main.41e56850.js"
+    "static/css/main.6b5dc949.css",
+    "static/js/main.b2eed817.js"
   ]
 }

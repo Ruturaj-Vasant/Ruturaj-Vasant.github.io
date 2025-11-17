@@ -1,0 +1,18 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f141a"/>
+      <stop offset="100%" stop-color="#141a21"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bgc)"/>
+  <rect x="160" y="160" width="1280" height="580" rx="28" ry="28" fill="#ffffff" opacity="0.06" stroke="#ffffff" stroke-opacity="0.25" stroke-width="4"/>
+  <!-- Play button -->
+  <circle cx="800" cy="450" r="120" fill="#ffffff" opacity="0.85" filter="url(#shadow)"/>
+  <polygon points="760,390 900,450 760,510" fill="#0f141a"/>
+  <text x="200" y="820" fill="#ffffff" opacity="0.85" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="700">Coupon Management System</text>
+</svg>
+

@@ -1,0 +1,24 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f141a"/>
+      <stop offset="100%" stop-color="#141a21"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg2)"/>
+  <rect x="120" y="140" width="1360" height="620" rx="24" ry="24" fill="none" stroke="#ffffff" opacity="0.25" stroke-width="4"/>
+  <!-- Grid -->
+  <g opacity="0.1" stroke="#ffffff" stroke-width="2">
+    <path d="M280 280 H1320"/>
+    <path d="M280 360 H1320"/>
+    <path d="M280 440 H1320"/>
+    <path d="M280 520 H1320"/>
+    <path d="M280 600 H1320"/>
+  </g>
+  <!-- Chart -->
+  <polyline fill="none" stroke="#ffffff" stroke-width="6" opacity="0.8"
+            points="300,600 420,520 540,560 660,440 780,480 900,380 1020,420 1140,320 1260,360"/>
+  <circle cx="1140" cy="320" r="10" fill="#ffffff"/>
+  <text x="120" y="120" fill="#ffffff" opacity="0.9" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">Data Science Notebook</text>
+</svg>
+
