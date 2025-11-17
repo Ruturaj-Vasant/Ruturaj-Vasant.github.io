@@ -15,6 +15,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
+import DownloadIcon from '@mui/icons-material/Download';
 
 const drawerWidth = 240;
 const navItems = [['Expertise', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Contact', 'contact']];
@@ -92,12 +93,20 @@ function Navigation({parentToChild, modeChange}: any) {
           ) : (
             <DarkModeIcon onClick={() => modeChange()}/>
           )}
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: 'none', sm: 'block' }, alignItems: 'center', gap: 1, ml: 1 }} className="nav-items">
             {navItems.map((item) => (
               <Button key={item[0]} onClick={() => scrollToSection(item[1])} sx={{ color: '#fff' }}>
                 {item[0]}
               </Button>
             ))}
+            <a
+              href="/resume/Ruturaj_Tambe_Resume.pdf"
+              download
+              className="counter-pill nav-resume"
+              title="Download Resume"
+            >
+              <DownloadIcon sx={{ fontSize: 18, mr: 0.5 }} /> Resume
+            </a>
           </Box>
         </Toolbar>
       </AppBar>
@@ -115,6 +124,16 @@ function Navigation({parentToChild, modeChange}: any) {
           }}
         >
           {drawer}
+          <Box sx={{ p: 2, display: 'flex', justifyContent: 'center', gap: 1 }}>
+            <a
+              href="/resume/Ruturaj_Tambe_Resume.pdf"
+              download
+              className="counter-pill nav-resume"
+              title="Download Resume"
+            >
+              <DownloadIcon sx={{ fontSize: 18, mr: 0.5 }} /> Resume
+            </a>
+          </Box>
         </Drawer>
       </nav>
     </Box>

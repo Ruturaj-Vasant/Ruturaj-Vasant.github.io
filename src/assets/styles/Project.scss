@@ -171,8 +171,8 @@
 
 .show-more__btn {
   background: transparent;
-  border: 2px solid rgba(0, 255, 200, 0.6);
-  color: rgba(0, 255, 200, 0.9);
+  border: 2px solid var(--accent-border);
+  color: var(--accent);
   padding: 0.8rem 1.6rem;
   border-radius: 12px;
   font-size: 1rem;
@@ -184,9 +184,305 @@
 .show-more__btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 8px 18px rgba(0,0,0,0.25);
-  background-color: rgba(0, 255, 200, 0.08);
+  background-color: var(--accent-hover);
+}
+
+/* Counter pill used in Navigation */
+.counter-pill {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0.35rem 0.8rem;
+  border: 2px solid var(--accent-border);
+  color: var(--accent);
+  background: var(--accent-bg);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
+/* External visitor badge image alignment */
+.counter-badge {
+  height: 26px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.counter-pill--embed {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.6rem;
+}
+
+.counter-pill__label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.counter-pill--embed .counter-badge {
+  height: 20px;
+}
+
+/* Simple inline nav count e.g., (75) */
+.nav-count {
+  display: inline-block;
+  margin-left: 8px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.nav-resume {
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+/* Remove purple hover on resume link; keep neutral */
+.nav-resume:hover {
+  color: var(--accent);
+  background: var(--accent-bg);
+  box-shadow: none;
 }
 
 .more-grid {
   margin-top: 1rem;
+}
+
+/* In-section navigation chips */
+.section-nav {
+  display: flex;
+  gap: 0.75rem;
+  // flex-wrap: wrap;
+  margin: 1.5rem 0;
+
+  padding: 0.75rem 1rem;
+  // border: 2px solid var(--accent-border);
+  // border-radius: 12px;
+  // background: linear-gradient(0deg, var(--accent-bg), var(--accent-bg));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+// Chip styles aligned to Expand/Collapse buttons
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--accent-border);
+  color: var(--accent);
+  background: var(--accent-bg);
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  background-color: var(--accent-hover);
+}
+
+.chip.is-active,
+.chip[aria-selected="true"] {
+  background-color: var(--accent-hover);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Theme-specific readability: white text in dark, black in light */
+/* Theme colors derived from CSS variables; no per-theme overrides needed */
+
+.section-header {
+  margin: 2rem 0 1rem;
+  font-size: 1.75rem;
+}
+
+.section-header--accent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 2px solid var(--accent-border);
+  color: var(--accent);
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  background: linear-gradient(0deg, var(--accent-bg), var(--accent-bg));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.section-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-title svg {
+  color: var(--accent);
+}
+
+.section-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--accent-bg);
+  border: 2px solid var(--accent-border);
+  color: var(--accent);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
+.section-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  background-color: var(--accent-hover);
+}
+
+/* Compact grid view (collapsed) */
+.compact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 1200px) {
+  .compact-grid { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+}
+
+@media (max-width: 700px) {
+  .compact-grid { grid-template-columns: 1fr; }
+}
+
+.compact-card {
+  width: 100%;
+  border: 1.5px solid var(--accent-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+.compact-card.interactive { cursor: pointer; }
+.compact-card.interactive:focus-visible { outline: 2px solid var(--accent-outline); outline-offset: 2px; }
+
+.compact-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-border);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+}
+
+.compact-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #fff;
+}
+
+.compact-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Icon-based thumbnail placeholder */
+.icon-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(100% 100% at 50% 0%, var(--accent-bg) 0%, var(--accent-bg) 50%, var(--accent-bg) 100%);
+}
+
+.icon-thumb .thumb-icon {
+  width: 44%;
+  height: 44%;
+  color: var(--accent);
+  filter: drop-shadow(0 4px 12px var(--accent-bg));
+}
+
+.compact-content {
+  padding: 0.9rem 1rem 1rem;
+  background: var(--card-content-bg);
+  border-top: 1px solid var(--accent-border);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.compact-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: inherit;
+  margin: 0 0 0.35rem 0;
+}
+
+.compact-summary {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: inherit;
+  margin: 0 0 0.75rem 0;
+}
+
+.compact-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mini-chip {
+  display: inline-block;
+  border: 1.5px solid var(--accent-border);
+  color: var(--accent);
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
+.mini-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  background-color: var(--accent-hover);
+}
+
+/* Mobile optimizations for Projects */
+@media (max-width: 768px) {
+  .section-nav {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    padding: 0.5rem 0.25rem;
+    gap: 0.5rem;
+    background: transparent;
+    box-shadow: none;
+  }
+  .section-nav::-webkit-scrollbar { display: none; }
+
+  .chip {
+    flex: 0 0 auto;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .section-header { margin: 1.25rem 0 0.5rem; }
+  .section-header--accent {
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-title { gap: 0.4rem; }
+  .section-toggle { display: none; }
 }

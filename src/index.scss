@@ -19,6 +19,29 @@ code {
 
 }
 
+/* Accent variables for components */
+.dark-mode {
+  --accent: rgba(255, 255, 255, 0.95);
+  --accent-border: rgba(255, 255, 255, 0.65);
+  --accent-bg: rgba(255, 255, 255, 0.06);
+  --accent-hover: rgba(255, 255, 255, 0.08);
+  --accent-outline: rgba(255, 255, 255, 0.8);
+  --card-content-bg: #141a21;
+}
+
+/* Ensure Projects section text is white in dark mode */
+.dark-mode .projects-container,
+.dark-mode .projects-container p,
+.dark-mode .projects-container a,
+.dark-mode .projects-container h1,
+.dark-mode .projects-container h2,
+.dark-mode .projects-container h3,
+.dark-mode .projects-container h4,
+.dark-mode .projects-container h5,
+.dark-mode .projects-container label {
+  color: #ffffff;
+}
+
 a {
   text-decoration: none;
 }
@@ -94,6 +117,25 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
 .light-mode {
   background-color: #f8f9fa;
+  --accent: rgba(17, 19, 24, 0.92);
+  --accent-border: rgba(0, 0, 0, 0.65);
+  --accent-bg: rgba(0, 0, 0, 0.06);
+  --accent-hover: rgba(0, 0, 0, 0.08);
+  --accent-outline: rgba(0, 0, 0, 0.8);
+  --card-content-bg: #ffffff;
+
+/* Ensure Projects section text is dark in light mode */
+.light-mode .projects-container,
+.light-mode .projects-container p,
+.light-mode .projects-container a,
+.light-mode .projects-container h1,
+.light-mode .projects-container h2,
+.light-mode .projects-container h3,
+.light-mode .projects-container h4,
+.light-mode .projects-container h5,
+.light-mode .projects-container label {
+  color: #0d1116;
+}
 
   .navigation-bar {
     background-color: #f8f9fa;
