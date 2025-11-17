@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.f6ba49f7.css",
+    "main.css": "/static/css/main.4d7ba51a.css",
     "main.js": "/static/js/main.fda0b61e.js",
     "static/media/Engage_Pro_tracker.png": "/static/media/Engage_Pro_tracker.4b4e0a49d78267d48eac.png",
     "static/media/Political_Economy_of_Corporate_Fraud.png": "/static/media/Political_Economy_of_Corporate_Fraud.971970eaa847ab6f81a1.png",
@@ -35,11 +35,11 @@
     "static/media/ds-generic.svg": "/static/media/ds-generic.faff49395a0e26aad852076dd3cad285.svg",
     "static/media/coupon-video-thumb.svg": "/static/media/coupon-video-thumb.b2bbea2a92a50b47f125b6336ec0ff42.svg",
     "index.html": "/index.html",
-    "main.f6ba49f7.css.map": "/static/css/main.f6ba49f7.css.map",
+    "main.4d7ba51a.css.map": "/static/css/main.4d7ba51a.css.map",
     "main.fda0b61e.js.map": "/static/js/main.fda0b61e.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6ba49f7.css",
+    "static/css/main.4d7ba51a.css",
     "static/js/main.fda0b61e.js"
   ]
 }
