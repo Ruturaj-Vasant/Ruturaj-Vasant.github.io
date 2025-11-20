@@ -51,6 +51,11 @@ a:hover {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
 
+/* Keep Resume link white and add subtle pop without purple hover */
+.navigation-bar .nav-resume-link:hover {
+  color: #ffffff !important;
+}
+
 p, a, h1, h2, h3, h4, h5, label, button {
   color: white;
   font-family: "Lato", sans-serif;
@@ -148,6 +153,11 @@ p, a, h1, h2, h3, h4, h5, label, button {
   a:hover {
     color: #5000ca;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  }
+
+  /* Keep Resume link readable in light mode too */
+  .navigation-bar .nav-resume-link:hover {
+    color: inherit !important;
   }
 
   .navigation-bar svg {

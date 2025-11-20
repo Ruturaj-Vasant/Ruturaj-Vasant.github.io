@@ -89,9 +89,9 @@ const lekinImages = [lekin1, lekin2];
 const TAB_DEFS = [
   { id: 'research-projects', label: 'Research Projects' },
   { id: 'personal-projects', label: 'Personal Projects' },
-  { id: 'understanding-finance', label: 'Understanding Finance' },
   { id: 'understanding-cloud-ml', label: 'Understanding Cloud & ML' },
   { id: 'understanding-ds-ai', label: 'Understanding DS & AI' },
+  { id: 'understanding-finance', label: 'Understanding Finance' },
 ];
 
 function Project() {
@@ -609,238 +609,6 @@ function Project() {
           </div>
         )}
 
-        {/* Understanding Finance Section */}
-        <div id="understanding-finance" className="section-header section-header--accent">
-          <div className="section-title">
-            <ShowChartIcon fontSize="small" />
-            <span>Understanding Finance</span>
-          </div>
-          <button
-            type="button"
-            className="section-toggle"
-            aria-expanded={financeExpanded}
-            aria-controls="finance-section-content"
-            onClick={() => setFinanceExpanded(v => !v)}
-          >
-            {financeExpanded ? (
-              <>
-                Collapse <ExpandLessIcon fontSize="small" />
-              </>
-            ) : (
-              <>
-                Expand <ExpandMoreIcon fontSize="small" />
-              </>
-            )}
-          </button>
-        </div>
-        <p className="section-subtitle">Concise notebooks and analyses to build intuition in markets and risk.</p>
-
-        {!financeExpanded && (
-          <div className="compact-grid">
-            {/* Compact Card: S&P 500 */}
-            <div
-              className="compact-card interactive"
-              role="button"
-              tabIndex={0}
-              onClick={() => setFinanceExpanded(true)}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFinanceExpanded(true); }}}
-              aria-label="Expand Understanding Finance"
-            >
-              <div className="compact-thumb">
-                <img src={snp1} alt="S&P 500: Volatility vs Returns" />
-              </div>
-              <div className="compact-content">
-                <h3 className="compact-title">S&amp;P 500: Volatility vs Returns</h3>
-                <p className="compact-summary">Normalized volatility indicators vs returns; concurrent & lagged effects with quintile analysis.</p>
-              </div>
-            </div>
-
-            {/* Compact Card: Nifty50 */}
-            <div
-              className="compact-card interactive"
-              role="button"
-              tabIndex={0}
-              onClick={() => setFinanceExpanded(true)}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFinanceExpanded(true); }}}
-              aria-label="Expand Understanding Finance"
-            >
-              <div className="compact-thumb">
-                <img src={niftyImg} alt="Nifty50 Most Volatile Days" />
-              </div>
-              <div className="compact-content">
-                <h3 className="compact-title">Finance: Nifty50 Most Volatile Days</h3>
-                <p className="compact-summary">Daily returns, rolling volatility, Z-scores; identify historically extreme days.</p>
-              </div>
-            </div>
-
-            {/* Compact Card: Systematic Trend-Following */}
-            <div
-              className="compact-card interactive"
-              role="button"
-              tabIndex={0}
-              onClick={() => setFinanceExpanded(true)}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFinanceExpanded(true); }}}
-              aria-label="Expand Understanding Finance"
-            >
-              <div className="compact-thumb">
-                <img src={trend1} alt="Systematic Trend-Following Strategies" />
-              </div>
-              <div className="compact-content">
-                <h3 className="compact-title">Systematic Trend-Following Strategies</h3>
-                <p className="compact-summary">Crossovers & breakouts across assets; Sharpe/Sortino, drawdowns, vol-weighting.</p>
-              </div>
-            </div>
-
-            {/* Compact Card: Systematic Investing: Risk Analysis */}
-            <div
-              className="compact-card interactive"
-              role="button"
-              tabIndex={0}
-              onClick={() => setFinanceExpanded(true)}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFinanceExpanded(true); }}}
-              aria-label="Expand Understanding Finance"
-            >
-              <div className="compact-thumb">
-                <img src={sys1} alt="Systematic Investing: Risk Analysis" />
-              </div>
-              <div className="compact-content">
-                <h3 className="compact-title">Systematic Investing: Risk Analysis</h3>
-                <p className="compact-summary">Correlations, drawdowns, equal vs inv-vol weights, simple forecasting.</p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {financeExpanded && (
-          <div className="projects-grid" id="finance-section-content">
-              {/* S&P 500: Volatility vs Returns */}
-              <div className="project">
-                  <Slideshow images={snpImages} />
-                  <h2>
-                      <a
-                          href="https://github.com/Ruturaj-Vasant/SNP500-Volatility-Vs-Returns"
-                          target="_blank"
-                          rel="noreferrer"
-                          style={{
-                              verticalAlign: 'middle',
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '0.5rem',
-                              textDecoration: 'none',
-                              color: 'inherit'
-                          }}
-                      >
-                          <GitHubIcon fontSize="small" />
-                          S&amp;P 500: Volatility vs Returns
-                      </a>
-                  </h2>
-                  <p>
-                      Analyzed the relationship between S&amp;P 500 volatility and returns using normalized indicators across historical data. Studied concurrent and lagged volatility effects, segmented results into quintiles, and evaluated potential predictive signals. Applied systematic investing techniques to assess behavioral patterns and generate actionable insights.
-                  </p>
-                  <div className="tags">
-                      <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Finance</span></p>
-                      <p><strong>Technologies:</strong> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Excel</span> <span className="tag tech">Data Analysis</span></p>
-                  </div>
-              </div>
-
-              {/* Finance: Nifty50 Most Volatile Days */}
-              <div className="project">
-                  <div className="media-frame">
-                    <img
-                      src={niftyImg}
-                      alt="Nifty50 Most Volatile Days Thumbnail"
-                      className="zoom"
-                    />
-                  </div>
-                  <h2>
-                      <a
-                          href="https://github.com/Ruturaj-Vasant/Finance_Nifty50_Most_Volatile_Days"
-                          target="_blank"
-                          rel="noreferrer"
-                          style={{
-                              verticalAlign: 'middle',
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '0.5rem',
-                              textDecoration: 'none',
-                              color: 'inherit'
-                          }}
-                      >
-                          <GitHubIcon fontSize="small" />
-                          Finance: Nifty50 Most Volatile Days
-                      </a>
-                  </h2>
-                  <p>
-                      This exploratory project analyzes historical Nifty 50 stock data to assess market volatility. It computes daily returns, rolling volatility, and Z-scores using Python, identifying historically extreme market days. Provides insights into behavior of Indian financial markets and demonstrates data cleaning, return computation, and volatility filtering techniques.
-                  </p>
-                  <div className="tags">
-                      <p><strong>Categories:</strong> <span className="tag category">Personal</span> <span className="tag category">Finance</span></p>
-                      <p><strong>Technologies:</strong> <span className="tag tech">Python</span> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Excel</span> <span className="tag tech">Data Analysis</span></p>
-                  </div>
-              </div>
-
-              {/* Systematic Trend-Following Strategies */}
-              <div className="project">
-                  <Slideshow images={trendImages} />
-                  <h2>
-                      <a
-                          href="https://github.com/Ruturaj-Vasant/Systematic-Trend-Following"
-                          target="_blank"
-                          rel="noreferrer"
-                          style={{
-                              verticalAlign: 'middle',
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '0.5rem',
-                              textDecoration: 'none',
-                              color: 'inherit'
-                          }}
-                      >
-                          <GitHubIcon fontSize="small" />
-                          Systematic Trend-Following Strategies
-                      </a>
-                  </h2>
-                  <p>
-                      Developed and evaluated multiple trend-following strategies using moving average crossovers and breakouts across fixed income, currency, and equity markets. Performance measured using Sharpe/Sortino ratios, drawdowns, and volatility-weighted combinations. The project includes inverse volatility methods and improvements using EMA-based filters.
-                  </p>
-                  <div className="tags">
-                      <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Finance</span></p>
-                      <p><strong>Technologies:</strong> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Excel</span> <span className="tag tech">Quantitative Finance</span></p>
-                  </div>
-              </div>
-
-              {/* Systematic Investing: Risk Analysis */}
-              <div className="project">
-                  <Slideshow images={sysInvestingImages} />
-                  <h2>
-                      <a
-                          href="https://github.com/Ruturaj-Vasant/Systematic-Investing-Risk-Analysis"
-                          target="_blank"
-                          rel="noreferrer"
-                          style={{
-                              verticalAlign: 'middle',
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '0.5rem',
-                              textDecoration: 'none',
-                              color: 'inherit'
-                          }}
-                      >
-                          <GitHubIcon fontSize="small" />
-                          Systematic Investing: Risk Analysis
-                      </a>
-                  </h2>
-                  <p>
-                      Analyzed risk and performance of three financial time series over 2,000 days. Computed correlations, drawdowns, and performance metrics under equal and inverse volatility-weighted allocations. Built a predictive model to forecast one asset using others, applying systematic investing principles to enhance portfolio risk-adjusted returns.
-                  </p>
-                  <div className="tags">
-                      <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Finance</span></p>
-                      <p><strong>Technologies:</strong> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Excel</span> <span className="tag tech">Quantitative Analysis</span></p>
-                  </div>
-              </div>
-          </div>
-        )}
-
         {/* Understanding Cloud & ML Section */}
         <div id="understanding-cloud-ml" className="section-header section-header--accent">
           <div className="section-title">
@@ -1123,6 +891,238 @@ function Project() {
 
         
 
+        {/* Understanding Finance Section (moved after Cloud & ML and DS & AI) */}
+        <div id="understanding-finance" className="section-header section-header--accent">
+          <div className="section-title">
+            <ShowChartIcon fontSize="small" />
+            <span>Understanding Finance</span>
+          </div>
+          <button
+            type="button"
+            className="section-toggle"
+            aria-expanded={financeExpanded}
+            aria-controls="finance-section-content"
+            onClick={() => setFinanceExpanded(v => !v)}
+          >
+            {financeExpanded ? (
+              <>
+                Collapse <ExpandLessIcon fontSize="small" />
+              </>
+            ) : (
+              <>
+                Expand <ExpandMoreIcon fontSize="small" />
+              </>
+            )}
+          </button>
+        </div>
+        <p className="section-subtitle">Concise notebooks and analyses to build intuition in markets and risk.</p>
+
+        {!financeExpanded && (
+          <div className="compact-grid">
+            {/* Compact Card: S&P 500 */}
+            <div
+              className="compact-card interactive"
+              role="button"
+              tabIndex={0}
+              onClick={() => setFinanceExpanded(true)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFinanceExpanded(true); }}}
+              aria-label="Expand Understanding Finance"
+            >
+              <div className="compact-thumb">
+                <img src={snp1} alt="S&P 500: Volatility vs Returns" />
+              </div>
+              <div className="compact-content">
+                <h3 className="compact-title">S&amp;P 500: Volatility vs Returns</h3>
+                <p className="compact-summary">Normalized volatility indicators vs returns; concurrent & lagged effects with quintile analysis.</p>
+              </div>
+            </div>
+
+            {/* Compact Card: Nifty50 */}
+            <div
+              className="compact-card interactive"
+              role="button"
+              tabIndex={0}
+              onClick={() => setFinanceExpanded(true)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFinanceExpanded(true); }}}
+              aria-label="Expand Understanding Finance"
+            >
+              <div className="compact-thumb">
+                <img src={niftyImg} alt="Nifty50 Most Volatile Days" />
+              </div>
+              <div className="compact-content">
+                <h3 className="compact-title">Finance: Nifty50 Most Volatile Days</h3>
+                <p className="compact-summary">Daily returns, rolling volatility, Z-scores; identify historically extreme days.</p>
+              </div>
+            </div>
+
+            {/* Compact Card: Systematic Trend-Following */}
+            <div
+              className="compact-card interactive"
+              role="button"
+              tabIndex={0}
+              onClick={() => setFinanceExpanded(true)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFinanceExpanded(true); }}}
+              aria-label="Expand Understanding Finance"
+            >
+              <div className="compact-thumb">
+                <img src={trend1} alt="Systematic Trend-Following Strategies" />
+              </div>
+              <div className="compact-content">
+                <h3 className="compact-title">Systematic Trend-Following Strategies</h3>
+                <p className="compact-summary">Crossovers & breakouts across assets; Sharpe/Sortino, drawdowns, vol-weighting.</p>
+              </div>
+            </div>
+
+            {/* Compact Card: Systematic Investing: Risk Analysis */}
+            <div
+              className="compact-card interactive"
+              role="button"
+              tabIndex={0}
+              onClick={() => setFinanceExpanded(true)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFinanceExpanded(true); }}}
+              aria-label="Expand Understanding Finance"
+            >
+              <div className="compact-thumb">
+                <img src={sys1} alt="Systematic Investing: Risk Analysis" />
+              </div>
+              <div className="compact-content">
+                <h3 className="compact-title">Systematic Investing: Risk Analysis</h3>
+                <p className="compact-summary">Correlations, drawdowns, equal vs inv-vol weights, simple forecasting.</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {financeExpanded && (
+          <div className="projects-grid" id="finance-section-content">
+              {/* S&P 500: Volatility vs Returns */}
+              <div className="project">
+                  <Slideshow images={snpImages} />
+                  <h2>
+                      <a
+                          href="https://github.com/Ruturaj-Vasant/SNP500-Volatility-Vs-Returns"
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{
+                              verticalAlign: 'middle',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.5rem',
+                              textDecoration: 'none',
+                              color: 'inherit'
+                          }}
+                      >
+                          <GitHubIcon fontSize="small" />
+                          S&amp;P 500: Volatility vs Returns
+                      </a>
+                  </h2>
+                  <p>
+                      Analyzed the relationship between S&amp;P 500 volatility and returns using normalized indicators across historical data. Studied concurrent and lagged volatility effects, segmented results into quintiles, and evaluated potential predictive signals. Applied systematic investing techniques to assess behavioral patterns and generate actionable insights.
+                  </p>
+                  <div className="tags">
+                      <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Finance</span></p>
+                      <p><strong>Technologies:</strong> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Excel</span> <span className="tag tech">Data Analysis</span></p>
+                  </div>
+              </div>
+
+              {/* Finance: Nifty50 Most Volatile Days */}
+              <div className="project">
+                  <div className="media-frame">
+                    <img
+                      src={niftyImg}
+                      alt="Nifty50 Most Volatile Days Thumbnail"
+                      className="zoom"
+                    />
+                  </div>
+                  <h2>
+                      <a
+                          href="https://github.com/Ruturaj-Vasant/Finance_Nifty50_Most_Volatile_Days"
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{
+                              verticalAlign: 'middle',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.5rem',
+                              textDecoration: 'none',
+                              color: 'inherit'
+                          }}
+                      >
+                          <GitHubIcon fontSize="small" />
+                          Finance: Nifty50 Most Volatile Days
+                      </a>
+                  </h2>
+                  <p>
+                      This exploratory project analyzes historical Nifty 50 stock data to assess market volatility. It computes daily returns, rolling volatility, and Z-scores using Python, identifying historically extreme market days. Provides insights into behavior of Indian financial markets and demonstrates data cleaning, return computation, and volatility filtering techniques.
+                  </p>
+                  <div className="tags">
+                      <p><strong>Categories:</strong> <span className="tag category">Personal</span> <span className="tag category">Finance</span></p>
+                      <p><strong>Technologies:</strong> <span className="tag tech">Python</span> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Excel</span> <span className="tag tech">Data Analysis</span></p>
+                  </div>
+              </div>
+
+              {/* Systematic Trend-Following Strategies */}
+              <div className="project">
+                  <Slideshow images={trendImages} />
+                  <h2>
+                      <a
+                          href="https://github.com/Ruturaj-Vasant/Systematic-Trend-Following"
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{
+                              verticalAlign: 'middle',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.5rem',
+                              textDecoration: 'none',
+                              color: 'inherit'
+                          }}
+                      >
+                          <GitHubIcon fontSize="small" />
+                          Systematic Trend-Following Strategies
+                      </a>
+                  </h2>
+                  <p>
+                      Developed and evaluated multiple trend-following strategies using moving average crossovers and breakouts across fixed income, currency, and equity markets. Performance measured using Sharpe/Sortino ratios, drawdowns, and volatility-weighted combinations. The project includes inverse volatility methods and improvements using EMA-based filters.
+                  </p>
+                  <div className="tags">
+                      <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Finance</span></p>
+                      <p><strong>Technologies:</strong> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Excel</span> <span className="tag tech">Quantitative Finance</span></p>
+                  </div>
+              </div>
+
+              {/* Systematic Investing: Risk Analysis */}
+              <div className="project">
+                  <Slideshow images={sysInvestingImages} />
+                  <h2>
+                      <a
+                          href="https://github.com/Ruturaj-Vasant/Systematic-Investing-Risk-Analysis"
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{
+                              verticalAlign: 'middle',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.5rem',
+                              textDecoration: 'none',
+                              color: 'inherit'
+                          }}
+                      >
+                          <GitHubIcon fontSize="small" />
+                          Systematic Investing: Risk Analysis
+                      </a>
+                  </h2>
+                  <p>
+                      Analyzed risk and performance of three financial time series over 2,000 days. Computed correlations, drawdowns, and performance metrics under equal and inverse volatility-weighted allocations. Built a predictive model to forecast one asset using others, applying systematic investing principles to enhance portfolio risk-adjusted returns.
+                  </p>
+                  <div className="tags">
+                      <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Finance</span></p>
+                      <p><strong>Technologies:</strong> <span className="tag tech">Jupyter Notebook</span> <span className="tag tech">Excel</span> <span className="tag tech">Quantitative Analysis</span></p>
+                  </div>
+              </div>
+          </div>
+        )}
+
         <div className="show-more">
           <button
             type="button"
@@ -1135,37 +1135,7 @@ function Project() {
 
         {showMore && (
           <div className="projects-grid more-grid">
-            <div className="project">
-              <h2>
-                <a
-                  href="https://github.com/Ruturaj-Vasant/Flask-Cluster-DNS_App"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    verticalAlign: 'middle',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    textDecoration: 'none',
-                    color: 'inherit'
-                  }}
-                >
-                  <GitHubIcon fontSize="small" />
-                  Distributed System with Flask
-                </a>
-              </h2>
-              <p>
-                A simulated distributed system built with Flask comprising three services:
-                an Auth Server for domain registration, a Fibonacci Server for computing
-                sequences, and a User Server for coordinating service requests. Fully
-                Dockerized and configured for Kubernetes deployment, demonstrating
-                container orchestration and inter-service communication.
-              </p>
-              <div className="tags">
-                <p><strong>Categories:</strong> <span className="tag category">Academic</span> <span className="tag category">Systems</span></p>
-                <p><strong>Technologies:</strong> <span className="tag tech">Python</span> <span className="tag tech">Flask</span> <span className="tag tech">Docker</span> <span className="tag tech">Kubernetes</span></p>
-              </div>
-            </div>
+            {/* Additional items can be added here as the portfolio grows */}
           </div>
         )}
     </div>

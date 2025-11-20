@@ -11,6 +11,13 @@ function Footer() {
         <a href="https://github.com/Ruturaj-Vasant" target="_blank" rel="noreferrer"><GitHubIcon/></a>
         <a href="https://www.linkedin.com/in/ruturaj-tambe-929364169/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
         <a href="/resume/Ruturaj_Tambe_Resume.pdf" download rel="noreferrer" title="Download Resume"><DownloadIcon/></a>
+        <span title="Visitors" style={{ display: 'inline-flex', alignItems: 'center', marginLeft: 8 }}>
+          <img
+            className="visitor-badge"
+            src="https://visitor-badge.laobi.icu/badge?page_id=Ruturaj-Vasant.Profile"
+            alt="Visitor count"
+          />
+        </span>
       </div>
       <p>Let’s build something impactful together.</p>
     </footer>

@@ -16,6 +16,7 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import DownloadIcon from '@mui/icons-material/Download';
+// Visitor count is displayed in Footer via image badge
 
 const drawerWidth = 240;
 const navItems = [['Expertise', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Contact', 'contact']];
@@ -99,14 +100,28 @@ function Navigation({parentToChild, modeChange}: any) {
                 {item[0]}
               </Button>
             ))}
-            <a
+            <Button
+              component="a"
               href="/resume/Ruturaj_Tambe_Resume.pdf"
               download
-              className="counter-pill nav-resume"
+              className="nav-resume-link"
+              disableRipple
+              sx={{
+                color: '#fff', ml: 1, gap: 0.5, display: 'inline-flex', alignItems: 'center',
+                fontSize: '1.1rem', fontFamily: 'Lato, sans-serif', textTransform: 'initial',
+                transition: 'transform .15s ease, box-shadow .15s ease, background-color .15s ease, color .15s ease',
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  color: '#fff',
+                  transform: 'translateY(-1px)',
+                  boxShadow: '0 8px 18px rgba(0,0,0,0.25)'
+                }
+              }}
               title="Download Resume"
             >
-              <DownloadIcon sx={{ fontSize: 18, mr: 0.5 }} /> Resume
-            </a>
+              <DownloadIcon sx={{ fontSize: 18 }} /> Resume
+            </Button>
+            {/* Visitor badge removed from nav per preference */}
           </Box>
         </Toolbar>
       </AppBar>
@@ -125,14 +140,16 @@ function Navigation({parentToChild, modeChange}: any) {
         >
           {drawer}
           <Box sx={{ p: 2, display: 'flex', justifyContent: 'center', gap: 1 }}>
-            <a
+            <Button
+              component="a"
               href="/resume/Ruturaj_Tambe_Resume.pdf"
               download
-              className="counter-pill nav-resume"
+              sx={{ textTransform: 'none', gap: 0.5, display: 'inline-flex', alignItems: 'center' }}
               title="Download Resume"
             >
-              <DownloadIcon sx={{ fontSize: 18, mr: 0.5 }} /> Resume
-            </a>
+              <DownloadIcon sx={{ fontSize: 18 }} /> Resume
+            </Button>
+            {/* Visitor badge removed from nav drawer per preference */}
           </Box>
         </Drawer>
       </nav>

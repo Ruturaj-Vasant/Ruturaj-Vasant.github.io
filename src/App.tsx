@@ -26,6 +26,8 @@ function App() {
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
       }, []);
 
+    // Visitor count now rendered via image badge in Footer only
+
     return (
     <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
         <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>

@@ -59,9 +59,9 @@ function Expertise() {
                   <div className="flex-chips">
                     <span className="chip-title">Tech Stack:</span>
                     {[
-                      "Python", "Go", "Microservices", "API Optimization", "JMeter", "Locust",
-                      "Datadog", "Splunk", "Postgres", "Redis", "React", "JavaScript", "HTML5",
-                        "SASS", "Flask", "SQL", "PostgreSQL", "Postman"
+                      "Python", "Go", "Microservices", "API Optimization", "Query Profiling",
+                      "JMeter", "Locust", "PostgreSQL", "Redis", "Kafka", "Datadog", "Splunk",
+                      "SLO (p95/p99)", "Capacity Modeling", "Bottleneck Analysis"
                     ].map((label, index) => (
                       <Chip key={index} className='chip' label={label} />
                     ))}
@@ -72,14 +72,15 @@ function Expertise() {
                   <FontAwesomeIcon icon={faDocker} size="3x"/>
                   <h3>DevOps, SRE & Applied AI</h3>
                   <p>
-                    Skilled in managing cloud infrastructure and automating CI/CD DevOps pipelines. Experienced in capacity planning and cost optimization efforts. Built and managed CI/CD pipelines, led cloud migrations, and implemented infrastructure-as-code across multiple environments to boost efficiency and reduce operational overhead. Passionate about exploring applied AI solutions using generative models to build smarter, user-centric applications.
+                    Skilled in managing cloud infrastructure and automating CI/CD DevOps pipelines. Experienced in capacity planning and cost optimization efforts. Built and managed CI/CD pipelines, led cloud migrations, and implemented infrastructure-as-code across multiple environments to boost efficiency and reduce operational overhead.
                   </p>
                   <div className="flex-chips">
                     <span className="chip-title">Tech Stack:</span>
                     {[
-                      "Microsoft Azure", "AWS", "Kubernetes", "Docker", "YAML", "Jenkins",
-                      "Git", "Firebase", "Terraform", "OpenAI", "Hugging Face", "Ollama",
-                      "Pandas", "Selenium"
+                      "Microsoft Azure", "AWS", "GCP", "Kubernetes", "Docker", "Terraform",
+                      "Jenkins", "Azure DevOps", "YAML", "Git", "K8s Autoscaling (HPA/VPA)",
+                      "Cost Optimization/TCO", "BlazeMeter", "OpenAI", "Ollama", "LLM-based IE",
+                      "NumPy", "Pandas", "scikit-learn", "Matplotlib"
                     ].map((label, index) => (
                       <Chip key={index} className='chip' label={label} />
                     ))}

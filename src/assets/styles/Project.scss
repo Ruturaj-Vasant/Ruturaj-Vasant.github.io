@@ -296,6 +296,14 @@
 /* Theme-specific readability: white text in dark, black in light */
 /* Theme colors derived from CSS variables; no per-theme overrides needed */
 
+/* Ensure link-chips (Report, Live Demo) look like category chips */
+.tags a.tag.category,
+a.tag.category {
+  background-color: #f0e5ff;
+  color: #663399;
+  text-decoration: none;
+}
+
 .section-header {
   margin: 2rem 0 1rem;
   font-size: 1.75rem;
