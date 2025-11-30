@@ -1,0 +1,286 @@
+%-------------------------
+% Resume in Latex
+% Author : Ruturaj
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{black}
+\colorlet{heading}{black}
+\colorlet{headingrule}{airforceblue}
+\colorlet{accent}{black}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\usepackage[margin=0.5in]{geometry}
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-1pt}}}
+}
+
+\newcommand{\classesList}[4]{
+  \item\small{{#1 #2 #3 #4 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{\large#1} & \textbf{\small #2} \\
+    \normalsize{\large#3} & \normalsize{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSingleSubheading}[4]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{\large#1} & \textbf{\small #2} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textit{\small#1} & \textit{\small #2} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+  \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & \textbf{\small #2}\\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[leftmargin=0.0in, label={}]
+}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.1in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-12pt}}
+
+\newcommand\sbullet[1][.5]{
+  \mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}
+}
+
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%----------HEADING----------
+
+\begin{center}
+  {\LARGE Ruturaj Tambe} \\ \vspace{2pt}
+  \footnotesize Software Engineer$|$Performance Engineer\\
+  \footnotesize
+  \href{mailto:rvt2018@nyu.edu}{\color{blue}{rvt2018@nyu.edu}}$|$
+  \href{https://www.linkedin.com/in/ruturaj-tambe-929364169}{\color{blue}{LinkedIn}}
+  $|$
+  \href{https://github.com/Ruturaj-Vasant}{\color{blue}{GitHub}}$|$
+  \href{https://ruturaj-vasant.github.io/}{\color{blue}{Portfolio}}$|$
+  +1(917)815-9432
+  \vspace{-7pt}
+\end{center}
+\vspace{-12pt}
+%-----------Overview -----------
+\begin{center}
+  \normalsize{Performance \& Capacity Engineer with 5+ years’ experience in capacity planning, performance optimization, and automation to scale infrastructure and improve cloud cost efficiency.}
+\end{center}
+
+\vspace{-30pt}
+
+%-----------EDUCATION-----------
+\section{\color{airforceblue}Education}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {New York University Courant School of Mathematics \& Stern School of
+  Business}{New York, USA}
+  {Master of Science in Information Systems}{May 2026 }
+\resumeSubItem{Database Systems, Data Communication Network, Algorithms,
+Cloud \& ML, Big data \& ML, Data Science \& AI, Finance}
+
+\vspace{4pt}
+
+\resumeSubheading
+  {MIT, Savitribai Phule Pune University }{}
+  {Bachelor of Engineering in Computer Science and Engineering}
+  {Aug 2015 - June 2019}
+\resumeSubItem{Data Structures \& Algorithms, Theory of Computation, Web
+Technology, Cloud Computing, High Performance Computing}
+
+\resumeSubHeadingListEnd
+
+\vspace{-16pt}
+
+%-----------PROGRAMMING SKILLS-----------
+\section{\color{airforceblue}Skills}
+\begin{itemize}[leftmargin=0in, label={}]
+  \small{\item{
+    \textbf{\normalsize{Programming :}}{ \normalsize{Python, Groovy, Golang,
+    MySQL $|$ \textbf{Platforms:} Linux, Windows, macOS}} \\
+    \vspace{1.2pt}
+
+    \textbf{\normalsize{Performance Engineering:}}{ \normalsize{JMeter,
+    Locust, API Optimization, Query Profiling (Datadog, Splunk, Postgres,
+    Redis, Kafka)}} \\
+    \vspace{1.2pt}
+
+    \textbf{\normalsize{Frameworks \& Libraries:}}{\normalsize{ Google Apps
+    Script, NumPy, Pandas, Matplotlib, scikit-learn}} \\
+    \vspace{1.2pt}
+
+    \textbf{\normalsize{Cloud \& DevOps:}}{ \normalsize{Git,GCP, Microsoft Azure,
+    AWS,  Kubernetes, Docker, Terraform, YAML, Jenkins,}} \\
+    \vspace{1.2pt}
+
+    \textbf{\normalsize{Core Competencies:}}{ \normalsize{Capacity Planning, Site Performance, Infrastructure Scaling, Cost Efficiency, Cross-functional Collaboration, Analytical Modeling, Automation, Problem Solving, Business Outcomes}} \\
+    % \normalsize{Leadership, Project Management, Agile Methodology, Team
+    % Collaboration, Jira, Google \& MS Office Suites} \\
+    \vspace{1.2pt}
+  }}
+\end{itemize}
+\vspace{-16pt}
+
+%-----------EXPERIENCE-----------
+\section{\color{airforceblue}Work Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {Avaya Software Engineer, Performance \& Capacity Engineering }{}
+  {R\&D - CCAAS Analytics Team}{Feb 2023 - May 2024}
+\resumeItemListStart
+  \resumeItem{\normalsize{Led site performance and capacity engineering for 
+  \textbf{22 microservices}, improving throughput by \textbf{375\%} and 
+  validating performance against SLOs (p95/p99) under peak load.}}
+  \resumeItem{\normalsize{Developed automated load and capacity frameworks 
+  using \textbf{Golang, Python, and Locust}, simulating \textbf{100K+ chat} 
+  and \textbf{20K+ voice transactions/hour} to analyze scalability and utilization.}}
+  \resumeItem{\normalsize{Built scenario-based capacity planning models to optimize headroom 
+  and regional placement across \textbf{\$5M+ annual lab infrastructure}, 
+  reducing cost by \textbf{\$4.2K/month} via Azure Lab migration while 
+  maintaining reliability targets.}}
+  \resumeItem{\normalsize{Partnered with Finance and Infra teams 
+  on \textbf{TCO analyses}, achieving \textbf{\$64.2K savings} 
+  through Datadog log optimization.}}
+  \resumeItem{\normalsize{Optimized Kubernetes resource allocation 
+  (\textbf{requests/limits, HPA/VPA tuning}), reducing OOM kills and throttling, 
+  and stabilizing CPU/memory across \textbf{35+ critical issues}.}}
+  \resumeItem{\normalsize{Resolved \textbf{70+ bottlenecks} 
+  (Postgres lag, Redis \& Kafka imbalance), improving 
+  system resilience and fault tolerance.}}
+  \resumeItem{\normalsize{Built \textbf{Datadog \& Splunk dashboards} 
+  to monitor capacity, performance, \& cost trends, influencing infra 
+   decisions.}}
+\resumeItemListEnd
+
+\vspace{6pt}
+
+\resumeSubheading
+  {Zensoft Services Pvt. Ltd. - Performance Engineering Team Lead}{}
+  {POC and Performance}{Jul 2019 - Feb 2023}
+\resumeItemListStart
+  \resumeItem{\normalsize{Led performance engineering \& capacity optimization for 
+  \textbf{20+ enterprise PwC projects }, 
+  improved response times by \textbf{up to 500\%} \& 
+  scaled user concurrency by \textbf{10×} while ensuring service reliability under load \& operational efficiency.}}
+  \resumeItem{\normalsize{Mentored and scaled the team from \textbf{5→23 engineers},
+   reducing onboarding time by \textbf{33\%} and tripling delivery throughput.}}
+  \resumeItem{\normalsize{Implemented ”shift-right” approach, reducing performance 
+  testing cycles by \textbf{25\%} and saving one day per sprint}}
+  \resumeItem{\normalsize{Automated \textbf{Azure DevOps \& BlazeMeter pipelines} 
+  reducing deployment time by \textbf{76\%} \& \textbf{98\%} using YAML workflows}}
+  \resumeItem{\normalsize{Optimized client-side performance by reducing
+  latency by \textbf{90\%} through strategic caching and file size
+  reduction}}
+  \resumeItem{\normalsize{Led \textbf{workload \& capacity optimization} to 
+  enhance infrastructure utilization by \textbf{30\%} \& prevent scaling bottlenecks.}}
+\resumeItemListEnd
+
+\vspace{4pt}
+\small\textit{\textbf{Awards:}}\ \small{Annual Super Squad \& Spot Appreciation Awards - for delivering high-impact performance across multiple projects.}
+
+%-----------RESEARCH ASSISTANT-----------
+\resumeSubheading
+  {New York University - Research Assistant }{New York, USA}
+  {Stern School of Business $|$ Wilf Family Department of Politics}
+  {Jan 2025 — Present}
+\vspace{-4pt}
+\resumeItemListStart
+\resumeItem{\normalsize{\textbf{\href{https://github.com/Ruturaj-Vasant/
+Political-Economy-Of-Corporate-Fraud}{\color{blue}{Political Economy of
+Corporate Fraud}}}: Used \textbf{NYU HPC} to distribute extraction/parsing for
+\textbf{88,516 tickers}; applied \textbf{LLM-based information extraction} on SEC
+filings to construct governance/financial features \& building \textbf{statistical
+analysis} to flag fraud risk. Parallelized jobs \& optimized compute utilization
+for higher throughput \& cost/performance.}}
+
+\resumeItem{\normalsize{\textbf{\href{https://github.com/Ruturaj-Vasant/
+Lekin_Python}{\color{blue}{Scheduling Systems / Lekin}}}: Developed a
+\textbf{Python library} for the \textbf{LEKIN scheduling system}
+with \textbf{4 implemented algorithms}. Provides functions to process
+C++ LEKIN input/output files and a framework for adding 
+\textbf{custom Python algorithms}. Currently building an integration for the
+\textbf{C++ legacy system} to run \textbf{user-defined Python algorithms}.}}
+
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+%-----------PROJECTS-----------
+\section{\color{airforceblue}Projects}
+\resumeItemListStart
+
+\resumeItem{\normalsize{\textbf{TradePartner (In Progress)}: B2B trade marketplace for
+ import-export traders to verify identities, share data, and connect with
+  trusted partners; features product/H.S. code search, real-time tariff data, 
+  and a cost-sorting engine.}}\\[4pt]
+\resumeItem{\normalsize{Projects are available on \href{https://ruturaj-vasant.github.io/}
+{\color{blue}{Portfolio}} and \href{https://github.com/Ruturaj-Vasant}
+{\color{blue}{GitHub}}. Currently working on learning mathematical optimization techniques 
+through NYU coursework and projects.}}
+\resumeItemListEnd
+
+\vspace{-12pt}
+
+\end{document}
