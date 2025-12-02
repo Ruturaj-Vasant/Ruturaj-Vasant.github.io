@@ -24,3 +24,6 @@ yarn-error.log*
 PersonalWebsiteEnvironment
 context.txt
 /Users/ruturaj_vasant/Desktop/PersonalProjects/PersonalWebsite/context.txt
+
+/public/resume/
+!Ruturaj_Tambe_Resume.pdf

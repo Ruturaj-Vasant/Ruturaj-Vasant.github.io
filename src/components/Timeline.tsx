@@ -40,7 +40,7 @@ function Timeline() {
       category: "Leadership",
     },
     {
-      title: "Software Developer",
+      title: "Software Engineer: Research & Development",
       subtitle: "Avaya",
       date: "Feb 2023 - Jun 2024",
       // description: "CI/CD, Query Optimization",
