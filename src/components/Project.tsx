@@ -34,6 +34,7 @@ import polThumb from '../assets/images/Political_Economy_of_Corporate_Fraud.png'
 import lekin1 from '../assets/images/Lekin_1.png';
 import lekin2 from '../assets/images/Lekin_2.png';
 import aiContainerImg from '../assets/images/AI-in-container.png';
+import aiServiceImg from '../assets/images/ai-service-container.svg';
 import imagenetImg from '../assets/images/imagenet-performance-benchmark.png';
 import engageImg from '../assets/images/Engage_Pro_tracker.png';
 import gpuScriptThumb from '../assets/images/gpu-creation-script.svg';
@@ -691,6 +692,24 @@ function Project() {
                 <p className="compact-summary">Automated GPU instance provisioning and setup for AI workflows.</p>
               </div>
             </div>
+
+            {/* Compact Card: AI Service in Container (last) */}
+            <div
+              className="compact-card interactive"
+              role="button"
+              tabIndex={0}
+              onClick={() => setCloudExpanded(true)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setCloudExpanded(true); }}}
+              aria-label="Expand Understanding Cloud & ML"
+            >
+              <div className="compact-thumb">
+                <img src={aiServiceImg} alt="AI Service in Container thumbnail" />
+              </div>
+              <div className="compact-content">
+                <h3 className="compact-title">AI Service in Container</h3>
+                <p className="compact-summary">Containerized microservice patterns for reliable AI serving.</p>
+              </div>
+            </div>
           </div>
         )}
 
@@ -727,6 +746,8 @@ function Project() {
                 <p><strong>Technologies:</strong> <span className="tag tech">Docker</span> <span className="tag tech">Containers</span></p>
               </div>
               </div>
+
+              
 
               {/* ImageNet Performance Benchmark */}
               <div className="project">
@@ -789,6 +810,38 @@ function Project() {
               <div className="tags">
                 <p><strong>Categories:</strong> <span className="tag category">Cloud</span> <span className="tag category">ML</span></p>
                 <p><strong>Technologies:</strong> <span className="tag tech">Bash</span> <span className="tag tech">GPU</span> <span className="tag tech">Automation</span></p>
+              </div>
+            </div>
+
+            {/* AI Service in Container (last) */}
+            <div className="project">
+              <div className="media-frame">
+                <img src={aiServiceImg} alt="AI Service in Container thumbnail" className="zoom" />
+              </div>
+              <h2>
+                <a
+                  href="https://github.com/Ruturaj-Vasant/AI-Service-in-Container"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    verticalAlign: 'middle',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    textDecoration: 'none',
+                    color: 'inherit'
+                  }}
+                >
+                  <GitHubIcon fontSize="small" />
+                  AI Service in Container
+                </a>
+              </h2>
+              <p>
+                Containerized microservice patterns for serving AI/ML workloads with clean deployment flows.
+              </p>
+              <div className="tags">
+                <p><strong>Categories:</strong> <span className="tag category">Cloud</span> <span className="tag category">AI</span></p>
+                <p><strong>Technologies:</strong> <span className="tag tech">Docker</span> <span className="tag tech">Microservices</span></p>
               </div>
             </div>
           </div>

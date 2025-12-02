@@ -40,6 +40,12 @@ export const dsNotebooks: NotebookItem[] = [
     summary: 'Tuned Decision Tree and L1‑Logistic to maximize AUC; applied cost‑aware targeting.',
   },
   {
+    title: 'Movie Reviews: Text & Sentiment Analysis',
+    path: 'projects/Movie_Reviews_For_Text_And_Sentiment_Analysis.ipynb',
+    category: 'Projects',
+    summary: 'End‑to‑end NLP pipeline for sentiment analysis on movie reviews (preprocessing, vectorization, classifiers).',
+  },
+  {
     title: 'Patient No-Show Prediction',
     path: 'projects/Patient_NoShow_Prediction.ipynb',
     category: 'Projects',
