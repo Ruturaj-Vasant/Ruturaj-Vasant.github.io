@@ -1,6 +1,7 @@
 import React from 'react';
 import '../assets/styles/Contact.scss';
 import ProfilePic from '../assets/images/ProfilePic.jpg';
+import { trackEvent } from '../analytics';
 
 function Contact() {
   return (
@@ -15,7 +16,13 @@ function Contact() {
               <img src={ProfilePic} alt="Ruturaj Tambe" className="contact-avatar" />
               <div className="contact-card-name">Turn Ideas Into Reality</div>
             </div>
-            <a href="mailto:rvt2018@stern.nyu.edu" className="contact-card-button">Contact me</a>
+            <a
+              href="mailto:rvt2018@stern.nyu.edu"
+              className="contact-card-button"
+              onClick={() => trackEvent('contact_click', { method: 'email', location: 'contact-section' })}
+            >
+              Contact me
+            </a>
           </div>
         </div>
       </div>

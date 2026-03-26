@@ -43,6 +43,7 @@ import gpuScriptThumb from '../assets/images/GPU-creation-through-terraform.png'
 import dsGenericThumb from '../assets/images/ds-generic.svg';
 import couponVideoThumb from '../assets/images/coupon-video-thumb.svg';
 import { dsNotebooks } from '../data/dsNotebooks';
+import { trackEvent } from '../analytics';
 
 // Generic reusable Slideshow component
 export function Slideshow({ images }: { images: string[] }) {
@@ -227,7 +228,17 @@ function Project() {
             className="section-toggle"
             aria-expanded={cloudExpanded}
             aria-controls="cloud-ml-section-content"
-            onClick={() => setCloudExpanded(v => !v)}
+            onClick={() =>
+              setCloudExpanded(v => {
+                const next = !v;
+                trackEvent('section_toggle', {
+                  section: 'cloud-machine-learning',
+                  state: next ? 'expanded' : 'collapsed',
+                  source: 'toggle'
+                });
+                return next;
+              })
+            }
           >
             {cloudExpanded ? (
               <>
@@ -331,6 +342,7 @@ function Project() {
                   href="https://github.com/Ruturaj-Vasant/AI-in-Container"
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => trackEvent('project_link_click', { project: 'AI in Container', destination: 'https://github.com/Ruturaj-Vasant/AI-in-Container' })}
                   style={{
                     verticalAlign: 'middle',
                     display: 'inline-flex',
@@ -364,6 +376,7 @@ function Project() {
                     href="https://github.com/Ruturaj-Vasant/imagenet-performance-benchmark"
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => trackEvent('project_link_click', { project: 'ImageNet Performance Benchmark', destination: 'https://github.com/Ruturaj-Vasant/imagenet-performance-benchmark' })}
                     style={{
                       verticalAlign: 'middle',
                       display: 'inline-flex',
@@ -396,6 +409,7 @@ function Project() {
                   href="https://github.com/Ruturaj-Vasant/GPU_Creation_Script"
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => trackEvent('project_link_click', { project: 'GPU Creation through Terraform', destination: 'https://github.com/Ruturaj-Vasant/GPU_Creation_Script' })}
                   style={{
                     verticalAlign: 'middle',
                     display: 'inline-flex',
@@ -428,6 +442,7 @@ function Project() {
                   href="https://github.com/Ruturaj-Vasant/AI-Service-in-Container"
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => trackEvent('project_link_click', { project: 'AI Service in Container', destination: 'https://github.com/Ruturaj-Vasant/AI-Service-in-Container' })}
                   style={{
                     verticalAlign: 'middle',
                     display: 'inline-flex',
@@ -467,7 +482,17 @@ function Project() {
             className="section-toggle"
             aria-expanded={researchExpanded}
             aria-controls="research-section-content"
-            onClick={() => setResearchExpanded(v => !v)}
+            onClick={() =>
+              setResearchExpanded(v => {
+                const next = !v;
+                trackEvent('section_toggle', {
+                  section: 'research-projects',
+                  state: next ? 'expanded' : 'collapsed',
+                  source: 'toggle'
+                });
+                return next;
+              })
+            }
           >
             {researchExpanded ? (
               <>
@@ -602,7 +627,17 @@ function Project() {
             className="section-toggle"
             aria-expanded={personalExpanded}
             aria-controls="personal-section-content"
-            onClick={() => setPersonalExpanded(v => !v)}
+            onClick={() =>
+              setPersonalExpanded(v => {
+                const next = !v;
+                trackEvent('section_toggle', {
+                  section: 'personal-projects',
+                  state: next ? 'expanded' : 'collapsed',
+                  source: 'toggle'
+                });
+                return next;
+              })
+            }
           >
             {personalExpanded ? (
               <>
@@ -867,7 +902,17 @@ function Project() {
             className="section-toggle"
             aria-expanded={dsExpanded}
             aria-controls="ds-section-content"
-            onClick={() => setDsExpanded(v => !v)}
+            onClick={() =>
+              setDsExpanded(v => {
+                const next = !v;
+                trackEvent('section_toggle', {
+                  section: 'understanding-ds-ai',
+                  state: next ? 'expanded' : 'collapsed',
+                  source: 'toggle'
+                });
+                return next;
+              })
+            }
           >
             {dsExpanded ? (
               <>
@@ -964,7 +1009,17 @@ function Project() {
             className="section-toggle"
             aria-expanded={financeExpanded}
             aria-controls="finance-section-content"
-            onClick={() => setFinanceExpanded(v => !v)}
+            onClick={() =>
+              setFinanceExpanded(v => {
+                const next = !v;
+                trackEvent('section_toggle', {
+                  section: 'understanding-finance',
+                  state: next ? 'expanded' : 'collapsed',
+                  source: 'toggle'
+                });
+                return next;
+              })
+            }
           >
             {financeExpanded ? (
               <>

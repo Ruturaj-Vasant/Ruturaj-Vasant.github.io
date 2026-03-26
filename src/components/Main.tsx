@@ -4,6 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import DownloadIcon from '@mui/icons-material/Download';
 import profileImage from '../assets/images/ProfilePic.jpg';
 import '../assets/styles/Main.scss';
+import { trackEvent } from '../analytics';
 
 function Main() {
   const [theme, setTheme] = useState("light");
@@ -34,24 +35,52 @@ function Main() {
     };
   }, []);
 
+  const handleOutboundClick = (destination: string, label: string) => {
+    trackEvent('outbound_click', { destination, label });
+  };
+
   return (
     <div className="container">
       <div className={`background-glow ${theme}-mode`} />
       {/* Fixed vertical social icons rail (desktop only) */}
       <div className={`social_icons ${theme}-mode`}>
-        <a href="https://github.com/Ruturaj-Vasant" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <a
+          href="https://github.com/Ruturaj-Vasant"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
+          onClick={() => handleOutboundClick('https://github.com/Ruturaj-Vasant', 'hero-rail-github')}
+        >
           <GitHubIcon />
         </a>
-        <a href="https://www.linkedin.com/in/ruturaj-tambe-929364169/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <a
+          href="https://www.linkedin.com/in/ruturaj-tambe-929364169/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+          onClick={() => handleOutboundClick('https://www.linkedin.com/in/ruturaj-tambe-929364169/', 'hero-rail-linkedin')}
+        >
           <LinkedInIcon />
         </a>
-        <a href="/resume/Ruturaj_Tambe_Resume.pdf" download rel="noreferrer" aria-label="Download Resume">
+        <a
+          href="/resume/Ruturaj_Tambe_Resume.pdf"
+          download
+          rel="noreferrer"
+          aria-label="Download Resume"
+          onClick={() => trackEvent('resume_download', { location: 'hero-rail' })}
+        >
           <DownloadIcon />
         </a>
       </div>
       {/* Fixed vertical email rail (desktop only) */}
       <div className={`email-rail ${theme}-mode`}>
-        <a href="mailto:rvt2018@nyu.edu" aria-label="Email Ruturaj">rvt2018@nyu.edu</a>
+        <a
+          href="mailto:rvt2018@nyu.edu"
+          aria-label="Email Ruturaj"
+          onClick={() => trackEvent('contact_click', { method: 'email', location: 'hero-rail' })}
+        >
+          rvt2018@nyu.edu
+        </a>
       </div>
       <div className="about-section">
         <div className="image-wrapper">
@@ -64,16 +93,48 @@ function Main() {
               Software Engineer 
             </p>
             <div className="social_icons">
-              <a href="https://github.com/Ruturaj-Vasant" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-              <a href="https://www.linkedin.com/in/ruturaj-tambe-929364169/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-              <a href="/resume/Ruturaj_Tambe_Resume.pdf" download rel="noreferrer" aria-label="Download Resume"><DownloadIcon/></a>
+              <a
+                href="https://github.com/Ruturaj-Vasant"
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => handleOutboundClick('https://github.com/Ruturaj-Vasant', 'hero-body-github')}
+              ><GitHubIcon/></a>
+              <a
+                href="https://www.linkedin.com/in/ruturaj-tambe-929364169/"
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => handleOutboundClick('https://www.linkedin.com/in/ruturaj-tambe-929364169/', 'hero-body-linkedin')}
+              ><LinkedInIcon/></a>
+              <a
+                href="/resume/Ruturaj_Tambe_Resume.pdf"
+                download
+                rel="noreferrer"
+                aria-label="Download Resume"
+                onClick={() => trackEvent('resume_download', { location: 'hero-body' })}
+              ><DownloadIcon/></a>
             </div>
           </div>
 
           <div className="mobile_social_icons">
-            <a href="https://github.com/Ruturaj-Vasant" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-            <a href="https://www.linkedin.com/in/ruturaj-tambe-929364169/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-            <a href="/resume/Ruturaj_Tambe_Resume.pdf" download rel="noreferrer" aria-label="Download Resume"><DownloadIcon/></a>
+            <a
+              href="https://github.com/Ruturaj-Vasant"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => handleOutboundClick('https://github.com/Ruturaj-Vasant', 'hero-mobile-github')}
+            ><GitHubIcon/></a>
+            <a
+              href="https://www.linkedin.com/in/ruturaj-tambe-929364169/"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => handleOutboundClick('https://www.linkedin.com/in/ruturaj-tambe-929364169/', 'hero-mobile-linkedin')}
+            ><LinkedInIcon/></a>
+            <a
+              href="/resume/Ruturaj_Tambe_Resume.pdf"
+              download
+              rel="noreferrer"
+              aria-label="Download Resume"
+              onClick={() => trackEvent('resume_download', { location: 'hero-mobile' })}
+            ><DownloadIcon/></a>
           </div>
         </div>
       </div>

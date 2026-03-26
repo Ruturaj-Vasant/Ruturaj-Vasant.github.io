@@ -16,6 +16,7 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import DownloadIcon from '@mui/icons-material/Download';
+import { trackEvent } from '../analytics';
 // Visitor count is displayed in Footer via image badge
 
 const drawerWidth = 240;
@@ -49,7 +50,7 @@ function Navigation({parentToChild, modeChange}: any) {
   }, []);
 
   const scrollToSection = (section: string) => {
-    console.log(section)
+    trackEvent('nav_click', { section });
     const expertiseElement = document.getElementById(section);
     if (expertiseElement) {
       expertiseElement.scrollIntoView({ behavior: 'smooth' });
@@ -104,6 +105,7 @@ function Navigation({parentToChild, modeChange}: any) {
               component="a"
               href="/resume/Ruturaj_Tambe_Resume.pdf"
               download
+              onClick={() => trackEvent('resume_download', { location: 'nav-desktop' })}
               className="nav-resume-link"
               disableRipple
               sx={{
@@ -144,6 +146,7 @@ function Navigation({parentToChild, modeChange}: any) {
               component="a"
               href="/resume/Ruturaj_Tambe_Resume.pdf"
               download
+              onClick={() => trackEvent('resume_download', { location: 'nav-mobile' })}
               sx={{ textTransform: 'none', gap: 0.5, display: 'inline-flex', alignItems: 'center' }}
               title="Download Resume"
             >
