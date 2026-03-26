@@ -23,7 +23,9 @@ const ensureGtagGlobals = () => {
 };
 
 const injectGtagScript = () => {
-  const existingScript = document.querySelector('script[data-gtag="true"]');
+  const existingScript =
+    document.querySelector('script[data-gtag="true"]') ||
+    document.querySelector('script[src*="googletagmanager.com/gtag/js"]');
   if (existingScript) return;
 
   const script = document.createElement('script');
