@@ -34,14 +34,12 @@ import polThumb from '../assets/images/Political_Economy_of_Corporate_Fraud.png'
 import lekin1 from '../assets/images/Lekin_1.png';
 import lekin2 from '../assets/images/Lekin_2.png';
 import aiContainerImg from '../assets/images/AI-in-container.png';
-import aiServiceImg from '../assets/images/ai-service-container.svg';
 import aiServiceUpload from '../assets/images/MNIST_upload-AI-service-in-container-1.png';
 import aiServiceResult from '../assets/images/MNIST_result-AI-service-in-container-2.png';
 import imagenetImg from '../assets/images/imagenet-performance-benchmark.png';
 import engageImg from '../assets/images/Engage_Pro_tracker.png';
 import gpuScriptThumb from '../assets/images/GPU-creation-through-terraform.png';
 import dsGenericThumb from '../assets/images/ds-generic.svg';
-import couponVideoThumb from '../assets/images/coupon-video-thumb.svg';
 import { dsNotebooks } from '../data/dsNotebooks';
 import { trackEvent } from '../analytics';
 
