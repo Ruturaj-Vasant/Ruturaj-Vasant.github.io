@@ -26,7 +26,6 @@ const ensureGtagGlobals = () => {
 
 const injectGtagScript = () => {
   // With inline snippet in index.html, we should never inject again.
-  return;
 };
 
 export const initAnalytics = () => {
