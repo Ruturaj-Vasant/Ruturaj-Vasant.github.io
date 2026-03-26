@@ -2,11 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
+import { initAnalytics, trackPageView } from './analytics';
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+initAnalytics();
+trackPageView();
+
 root.render(
   <React.StrictMode>
     <App />
