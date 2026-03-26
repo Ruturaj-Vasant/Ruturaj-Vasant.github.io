@@ -35,9 +35,11 @@ import lekin1 from '../assets/images/Lekin_1.png';
 import lekin2 from '../assets/images/Lekin_2.png';
 import aiContainerImg from '../assets/images/AI-in-container.png';
 import aiServiceImg from '../assets/images/ai-service-container.svg';
+import aiServiceUpload from '../assets/images/MNIST_upload-AI-service-in-container-1.png';
+import aiServiceResult from '../assets/images/MNIST_result-AI-service-in-container-2.png';
 import imagenetImg from '../assets/images/imagenet-performance-benchmark.png';
 import engageImg from '../assets/images/Engage_Pro_tracker.png';
-import gpuScriptThumb from '../assets/images/gpu-creation-script.svg';
+import gpuScriptThumb from '../assets/images/GPU-creation-through-terraform.png';
 import dsGenericThumb from '../assets/images/ds-generic.svg';
 import couponVideoThumb from '../assets/images/coupon-video-thumb.svg';
 import { dsNotebooks } from '../data/dsNotebooks';
@@ -85,12 +87,13 @@ const sysInvestingImages = [sys1, sys2, sys3, sys4, sys5, sys6];
 const trendImages = [trend1, trend2, trend3];
 const snpImages = [snp1, snp2, snp3, snp4];
 const lekinImages = [lekin1, lekin2];
+const aiServiceImages = [aiServiceUpload, aiServiceResult];
 
 // Stable tab definitions (module-scope to avoid hook deps)
 const TAB_DEFS = [
+  { id: 'cloud-machine-learning', label: 'Cloud & Machine Learning' },
   { id: 'research-projects', label: 'Research Projects' },
   { id: 'personal-projects', label: 'Personal Projects' },
-  { id: 'understanding-cloud-ml', label: 'Understanding Cloud & ML' },
   { id: 'understanding-ds-ai', label: 'Understanding DS & AI' },
   { id: 'understanding-finance', label: 'Understanding Finance' },
 ];
@@ -108,7 +111,7 @@ function Project() {
     if (window?.location?.hash === '#understanding-finance') {
       setFinanceExpanded(true);
     }
-    if (window?.location?.hash === '#understanding-cloud-ml') {
+    if (window?.location?.hash === '#cloud-machine-learning') {
       setCloudExpanded(true);
     }
     if (window?.location?.hash === '#research-projects') {
@@ -126,13 +129,12 @@ function Project() {
     }
   }, []);
 
-  // Mobile: auto-expand all sections for simpler UX
+  // Mobile: auto-expand sections for simpler UX (keep Cloud collapsed by default)
   useEffect(() => {
     if (typeof window !== 'undefined' && window.innerWidth <= 768) {
       setResearchExpanded(true);
       setPersonalExpanded(true);
       setFinanceExpanded(true);
-      setCloudExpanded(true);
       setDsExpanded(true);
     }
   }, []);
@@ -213,6 +215,246 @@ function Project() {
             </a>
           ))}
         </div>
+
+        {/* Cloud & Machine Learning Section */}
+        <div id="cloud-machine-learning" className="section-header section-header--accent">
+          <div className="section-title">
+            <CloudQueueIcon fontSize="small" />
+            <span>Cloud & Machine Learning</span>
+          </div>
+          <button
+            type="button"
+            className="section-toggle"
+            aria-expanded={cloudExpanded}
+            aria-controls="cloud-ml-section-content"
+            onClick={() => setCloudExpanded(v => !v)}
+          >
+            {cloudExpanded ? (
+              <>
+                Collapse <ExpandLessIcon fontSize="small" />
+              </>
+            ) : (
+              <>
+                Expand <ExpandMoreIcon fontSize="small" />
+              </>
+            )}
+          </button>
+        </div>
+        <p className="section-subtitle">Infra, containers, and GPU benchmarking for AI workloads.</p>
+
+        {!cloudExpanded && (
+          <div className="compact-grid">
+            {/* Compact Card: GPU Creation Script */}
+            {/* Compact Card: AI in Container */}
+            <div
+              className="compact-card interactive"
+              role="button"
+              tabIndex={0}
+              onClick={() => setCloudExpanded(true)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setCloudExpanded(true); }}}
+              aria-label="Expand Cloud & Machine Learning"
+            >
+              <div className="compact-thumb">
+                <img src={aiContainerImg} alt="AI in Container thumbnail" />
+              </div>
+              <div className="compact-content">
+                <h3 className="compact-title">AI in Container</h3>
+                <p className="compact-summary">Dockerized Python inference app with multi-stage builds, env-config, and health checks.</p>
+              </div>
+            </div>
+
+            {/* Compact Card: ImageNet Benchmark */}
+            <div
+              className="compact-card interactive"
+              role="button"
+              tabIndex={0}
+              onClick={() => setCloudExpanded(true)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setCloudExpanded(true); }}}
+              aria-label="Expand Cloud & Machine Learning"
+            >
+              <div className="compact-thumb">
+                <img src={imagenetImg} alt="ImageNet Performance Benchmark thumbnail" />
+              </div>
+              <div className="compact-content">
+                <h3 className="compact-title">ImageNet Performance Benchmark</h3>
+                <p className="compact-summary">GPU inference benchmark: throughput (img/s) & p95 latency across batch/AMP.</p>
+              </div>
+            </div>
+
+            {/* Compact Card: GPU Creation through Terraform */}
+            <div
+              className="compact-card interactive"
+              role="button"
+              tabIndex={0}
+              onClick={() => setCloudExpanded(true)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setCloudExpanded(true); }}}
+              aria-label="Expand Cloud & Machine Learning"
+            >
+              <div className="compact-thumb">
+                <img src={gpuScriptThumb} alt="GPU Creation through Terraform thumbnail" />
+              </div>
+              <div className="compact-content">
+                <h3 className="compact-title">GPU Creation through Terraform</h3>
+                <p className="compact-summary">Terraform+gcloud GPU zone scan, availability matrix, and auto-provisioning.</p>
+              </div>
+            </div>
+
+            {/* Compact Card: AI Service in Container (last) */}
+            <div
+              className="compact-card interactive"
+              role="button"
+              tabIndex={0}
+              onClick={() => setCloudExpanded(true)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setCloudExpanded(true); }}}
+              aria-label="Expand Cloud & Machine Learning"
+            >
+              <div className="compact-thumb">
+                <img src={aiServiceUpload} alt="AI Service in Container upload screenshot" />
+              </div>
+              <div className="compact-content">
+                <h3 className="compact-title">AI Service in Container</h3>
+                <p className="compact-summary">REST API for model inference; Dockerized with compose, readiness, and logging.</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {cloudExpanded && (
+          <div className="projects-grid" id="cloud-ml-section-content">
+            {/* AI in Container */}
+            <div className="project">
+              <div className="media-frame">
+                <img src={aiContainerImg} alt="AI in Container thumbnail" className="zoom" />
+              </div>
+              <h2>
+                <a
+                  href="https://github.com/Ruturaj-Vasant/AI-in-Container"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    verticalAlign: 'middle',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    textDecoration: 'none',
+                    color: 'inherit'
+                  }}
+                >
+                  <GitHubIcon fontSize="small" />
+                  AI in Container
+                </a>
+              </h2>
+              <p>
+                Packaged a Python-based AI inference workload into a reproducible Docker image. Implemented multi-stage builds to reduce image size, environment-based configuration, health checks, and make targets/scripts for local runs and portability.
+              </p>
+              <div className="tags">
+                <p><strong>Categories:</strong> <span className="tag category">Cloud</span> <span className="tag category">Machine Learning</span></p>
+                <p><strong>Technologies:</strong> <span className="tag tech">Docker</span> <span className="tag tech">Containers</span></p>
+              </div>
+              </div>
+
+              
+              {/* ImageNet Performance Benchmark */}
+              <div className="project">
+                <div className="media-frame">
+                  <img src={imagenetImg} alt="ImageNet Performance Benchmark thumbnail" className="zoom" />
+                </div>
+                <h2>
+                  <a
+                    href="https://github.com/Ruturaj-Vasant/imagenet-performance-benchmark"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      verticalAlign: 'middle',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      textDecoration: 'none',
+                      color: 'inherit'
+                    }}
+                  >
+                    <GitHubIcon fontSize="small" />
+                    ImageNet Performance Benchmark
+                  </a>
+                </h2>
+                <p>
+                  Configurable harness to benchmark model inference on GPUs; measures throughput (images/sec) and p95 latency across batch sizes and precisions (AMP/FP32), profiles GPU utilization/memory, and exports CSV/plots to compare serving configurations.
+                </p>
+                <div className="tags">
+                  <p><strong>Categories:</strong> <span className="tag category">Machine Learning</span> <span className="tag category">Benchmark</span></p>
+                  <p><strong>Technologies:</strong> <span className="tag tech">Python</span> <span className="tag tech">Benchmarking</span> <span className="tag tech">GPU</span></p>
+                </div>
+              </div>
+
+            {/* GPU Creation through Terraform */}
+            <div className="project">
+              <div className="media-frame">
+                <img src={gpuScriptThumb} alt="GPU Creation through Terraform thumbnail" className="zoom" />
+              </div>
+              <h2>
+                <a
+                  href="https://github.com/Ruturaj-Vasant/GPU_Creation_Script"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    verticalAlign: 'middle',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    textDecoration: 'none',
+                    color: 'inherit'
+                  }}
+                >
+                  <GitHubIcon fontSize="small" />
+                  GPU Creation through Terraform
+                </a>
+              </h2>
+              <p>
+                Terraform + gcloud workflow that scans regions/zones, builds a GPU availability matrix (10+ zones), auto-provisions a T4-backed VM with retry/failover, and bootstraps drivers/containers for training/inference.
+              </p>
+              <div className="tags">
+                <p><strong>Categories:</strong> <span className="tag category">Cloud</span> <span className="tag category">Machine Learning</span></p>
+                <p><strong>Technologies:</strong> <span className="tag tech">Bash</span> <span className="tag tech">GPU</span> <span className="tag tech">Automation</span></p>
+              </div>
+            </div>
+
+            {/* AI Service in Container (last) */}
+            <div className="project">
+              <div className="media-frame">
+                <Slideshow images={aiServiceImages} />
+              </div>
+              <h2>
+                <a
+                  href="https://github.com/Ruturaj-Vasant/AI-Service-in-Container"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    verticalAlign: 'middle',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    textDecoration: 'none',
+                    color: 'inherit'
+                  }}
+                >
+                  <GitHubIcon fontSize="small" />
+                  AI Service in Container
+                </a>
+              </h2>
+              <p>
+                Exposed a REST API for model inference and containerized it for consistent dev/run. Documented request/response schema, added docker-compose, readiness/liveness checks, and structured logging.
+              </p>
+              <div className="tags">
+                <p><strong>Categories:</strong> <span className="tag category">Cloud</span> <span className="tag category">AI</span></p>
+                <p><strong>Technologies:</strong> <span className="tag tech">Docker</span> <span className="tag tech">Microservices</span></p>
+              </div>
+              <div className="compact-actions" style={{ marginTop: '0.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <a className="mini-chip" href={aiServiceUpload} target="_blank" rel="noreferrer">Open Upload Image</a>
+                <a className="mini-chip" href={aiServiceResult} target="_blank" rel="noreferrer">Open Result Image</a>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Research Projects Section (first) */}
         <div id="research-projects" className="section-header section-header--accent">
@@ -441,7 +683,11 @@ function Project() {
               aria-label="Expand Personal Projects"
             >
               <div className="compact-thumb">
-                <img src={couponVideoThumb} alt="Coupon Management System video thumbnail" />
+                <iframe
+                  src="https://www.youtube.com/embed/FgY6r2kxnMY?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0&vq=hd1080&loop=1&playlist=FgY6r2kxnMY"
+                  title="Coupon Management System Demo Thumbnail"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                ></iframe>
               </div>
               <div className="compact-content">
                 <h3 className="compact-title">Coupon Management System</h3>
@@ -605,243 +851,6 @@ function Project() {
               <div className="tags">
                 <p><strong>Categories:</strong> <span className="tag category">Personal</span> <span className="tag category">Automation</span></p>
                 <p><strong>Technologies:</strong> <span className="tag tech">JavaScript</span> <span className="tag tech">Google Apps Script</span> <span className="tag tech">PassKit</span> <span className="tag tech">Apple Wallet</span></p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Understanding Cloud & ML Section */}
-        <div id="understanding-cloud-ml" className="section-header section-header--accent">
-          <div className="section-title">
-            <CloudQueueIcon fontSize="small" />
-            <span>Understanding Cloud & ML</span>
-          </div>
-          <button
-            type="button"
-            className="section-toggle"
-            aria-expanded={cloudExpanded}
-            aria-controls="cloudml-section-content"
-            onClick={() => setCloudExpanded(v => !v)}
-          >
-            {cloudExpanded ? (
-              <>
-                Collapse <ExpandLessIcon fontSize="small" />
-              </>
-            ) : (
-              <>
-                Expand <ExpandMoreIcon fontSize="small" />
-              </>
-            )}
-          </button>
-        </div>
-        <p className="section-subtitle">Infra, containers, and GPU benchmarking for AI workloads.</p>
-
-        {!cloudExpanded && (
-          <div className="compact-grid">
-            {/* Compact Card: GPU Creation Script */}
-            {/* Compact Card: AI in Container */}
-            <div
-              className="compact-card interactive"
-              role="button"
-              tabIndex={0}
-              onClick={() => setCloudExpanded(true)}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setCloudExpanded(true); }}}
-              aria-label="Expand Understanding Cloud & ML"
-            >
-              <div className="compact-thumb">
-                <img src={aiContainerImg} alt="AI in Container thumbnail" />
-              </div>
-              <div className="compact-content">
-                <h3 className="compact-title">AI in Container</h3>
-                <p className="compact-summary">Containerized AI apps with sane defaults for portability and speed.</p>
-              </div>
-            </div>
-
-            {/* Compact Card: ImageNet Benchmark */}
-            <div
-              className="compact-card interactive"
-              role="button"
-              tabIndex={0}
-              onClick={() => setCloudExpanded(true)}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setCloudExpanded(true); }}}
-              aria-label="Expand Understanding Cloud & ML"
-            >
-              <div className="compact-thumb">
-                <img src={imagenetImg} alt="ImageNet Performance Benchmark thumbnail" />
-              </div>
-              <div className="compact-content">
-                <h3 className="compact-title">ImageNet Performance Benchmark</h3>
-                <p className="compact-summary">Measure model throughput/latency under different GPU/container configs.</p>
-              </div>
-            </div>
-
-            {/* Compact Card: GPU Creation through Terraform */}
-            <div
-              className="compact-card interactive"
-              role="button"
-              tabIndex={0}
-              onClick={() => setCloudExpanded(true)}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setCloudExpanded(true); }}}
-              aria-label="Expand Understanding Cloud & ML"
-            >
-              <div className="compact-thumb">
-                <img src={gpuScriptThumb} alt="GPU Creation through Terraform thumbnail" />
-              </div>
-              <div className="compact-content">
-                <h3 className="compact-title">GPU Creation through Terraform</h3>
-                <p className="compact-summary">Automated GPU instance provisioning and setup for AI workflows.</p>
-              </div>
-            </div>
-
-            {/* Compact Card: AI Service in Container (last) */}
-            <div
-              className="compact-card interactive"
-              role="button"
-              tabIndex={0}
-              onClick={() => setCloudExpanded(true)}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setCloudExpanded(true); }}}
-              aria-label="Expand Understanding Cloud & ML"
-            >
-              <div className="compact-thumb">
-                <img src={aiServiceImg} alt="AI Service in Container thumbnail" />
-              </div>
-              <div className="compact-content">
-                <h3 className="compact-title">AI Service in Container</h3>
-                <p className="compact-summary">Containerized microservice patterns for reliable AI serving.</p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {cloudExpanded && (
-          <div className="projects-grid" id="cloudml-section-content">
-            {/* AI in Container */}
-            <div className="project">
-              <div className="media-frame">
-                <img src={aiContainerImg} alt="AI in Container thumbnail" className="zoom" />
-              </div>
-              <h2>
-                <a
-                  href="https://github.com/Ruturaj-Vasant/AI-in-Container"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    verticalAlign: 'middle',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    textDecoration: 'none',
-                    color: 'inherit'
-                  }}
-                >
-                  <GitHubIcon fontSize="small" />
-                  AI in Container
-                </a>
-              </h2>
-              <p>
-                Patterns to containerize AI workloads for reproducibility, portability, and faster iteration.
-              </p>
-              <div className="tags">
-                <p><strong>Categories:</strong> <span className="tag category">Cloud</span> <span className="tag category">ML</span></p>
-                <p><strong>Technologies:</strong> <span className="tag tech">Docker</span> <span className="tag tech">Containers</span></p>
-              </div>
-              </div>
-
-              
-
-              {/* ImageNet Performance Benchmark */}
-              <div className="project">
-                <div className="media-frame">
-                  <img src={imagenetImg} alt="ImageNet Performance Benchmark thumbnail" className="zoom" />
-                </div>
-                <h2>
-                  <a
-                    href="https://github.com/Ruturaj-Vasant/imagenet-performance-benchmark"
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      verticalAlign: 'middle',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.5rem',
-                      textDecoration: 'none',
-                      color: 'inherit'
-                    }}
-                  >
-                    <GitHubIcon fontSize="small" />
-                    ImageNet Performance Benchmark
-                  </a>
-                </h2>
-                <p>
-                  Benchmarking to measure throughput and latency for models/datasets across GPU/container configs.
-                </p>
-                <div className="tags">
-                  <p><strong>Categories:</strong> <span className="tag category">ML</span> <span className="tag category">Benchmark</span></p>
-                  <p><strong>Technologies:</strong> <span className="tag tech">Python</span> <span className="tag tech">Benchmarking</span> <span className="tag tech">GPU</span></p>
-                </div>
-              </div>
-
-            {/* GPU Creation through Terraform */}
-            <div className="project">
-              <div className="media-frame">
-                <img src={gpuScriptThumb} alt="GPU Creation through Terraform thumbnail" className="zoom" />
-              </div>
-              <h2>
-                <a
-                  href="https://github.com/Ruturaj-Vasant/GPU_Creation_Script"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    verticalAlign: 'middle',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    textDecoration: 'none',
-                    color: 'inherit'
-                  }}
-                >
-                  <GitHubIcon fontSize="small" />
-                  GPU Creation through Terraform
-                </a>
-              </h2>
-              <p>
-                Scripts to automate provisioning and setup of GPU machines for ML development and benchmarking.
-              </p>
-              <div className="tags">
-                <p><strong>Categories:</strong> <span className="tag category">Cloud</span> <span className="tag category">ML</span></p>
-                <p><strong>Technologies:</strong> <span className="tag tech">Bash</span> <span className="tag tech">GPU</span> <span className="tag tech">Automation</span></p>
-              </div>
-            </div>
-
-            {/* AI Service in Container (last) */}
-            <div className="project">
-              <div className="media-frame">
-                <img src={aiServiceImg} alt="AI Service in Container thumbnail" className="zoom" />
-              </div>
-              <h2>
-                <a
-                  href="https://github.com/Ruturaj-Vasant/AI-Service-in-Container"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    verticalAlign: 'middle',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    textDecoration: 'none',
-                    color: 'inherit'
-                  }}
-                >
-                  <GitHubIcon fontSize="small" />
-                  AI Service in Container
-                </a>
-              </h2>
-              <p>
-                Containerized microservice patterns for serving AI/ML workloads with clean deployment flows.
-              </p>
-              <div className="tags">
-                <p><strong>Categories:</strong> <span className="tag category">Cloud</span> <span className="tag category">AI</span></p>
-                <p><strong>Technologies:</strong> <span className="tag tech">Docker</span> <span className="tag tech">Microservices</span></p>
               </div>
             </div>
           </div>
