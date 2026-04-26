@@ -19,13 +19,30 @@
       var scriptUrl = 'https://script.google.com/macros/s/AKfycbzvUzb1mWeHyb0G43mVQif9Qa3H9XWjtxol65GCHTGfpCVMpy8VLPdygPg_ZbALlMP2/exec';
       var params = new URLSearchParams(window.location.search);
       var trackingId = params.get('id') || '';
+      var pingUrl = scriptUrl + '?action=portfolio&id=' + encodeURIComponent(trackingId) + '&t=' + Date.now();
 
       if (trackingId) {
-        var beacon = new Image();
-        beacon.src = scriptUrl + '?action=portfolio&id=' + encodeURIComponent(trackingId) + '&t=' + Date.now();
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon(pingUrl);
+        }
+
+        if (window.fetch) {
+          fetch(pingUrl, {
+            method: 'GET',
+            mode: 'no-cors',
+            keepalive: true,
+            cache: 'no-store'
+          }).catch(function () {});
+        }
+
+        var beacon = new Image(1, 1);
+        beacon.decoding = 'async';
+        beacon.src = pingUrl;
       }
 
-      window.location.replace(portfolioUrl);
+      window.setTimeout(function () {
+        window.location.replace(portfolioUrl);
+      }, trackingId ? 350 : 0);
     }());
   </script>
 </head>
