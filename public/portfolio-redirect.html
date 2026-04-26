@@ -14,7 +14,7 @@
 
       if (trackingId) {
         var beacon = new Image();
-        beacon.src = scriptUrl + '?action=portfolio_ping&id=' + encodeURIComponent(trackingId) + '&t=' + Date.now();
+        beacon.src = scriptUrl + '?action=portfolio&id=' + encodeURIComponent(trackingId) + '&t=' + Date.now();
       }
 
       window.setTimeout(function () {
