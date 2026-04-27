@@ -19,30 +19,65 @@
       var scriptUrl = 'https://script.google.com/macros/s/AKfycbzvUzb1mWeHyb0G43mVQif9Qa3H9XWjtxol65GCHTGfpCVMpy8VLPdygPg_ZbALlMP2/exec';
       var params = new URLSearchParams(window.location.search);
       var trackingId = params.get('id') || '';
-      var pingUrl = scriptUrl + '?action=portfolio&id=' + encodeURIComponent(trackingId) + '&t=' + Date.now();
+      var pingUrl = scriptUrl + '?action=portfolio&id=' + encodeURIComponent(trackingId) + '&redirect=0&t=' + Date.now();
+      var redirected = false;
+
+      function redirectNow() {
+        if (redirected) {
+          return;
+        }
+        redirected = true;
+        window.location.replace(portfolioUrl);
+      }
+
+      function trackWithImage() {
+        return new Promise(function (resolve) {
+          var image = new Image(1, 1);
+          var done = false;
+
+          function finish() {
+            if (done) {
+              return;
+            }
+            done = true;
+            resolve();
+          }
+
+          image.onload = finish;
+          image.onerror = finish;
+          image.decoding = 'async';
+          image.src = pingUrl;
+          window.setTimeout(finish, 1200);
+        });
+      }
+
+      function trackWithFetch() {
+        if (!window.fetch) {
+          return Promise.resolve();
+        }
+
+        return fetch(pingUrl, {
+          method: 'GET',
+          mode: 'no-cors',
+          keepalive: true,
+          cache: 'no-store'
+        }).catch(function () {});
+      }
 
       if (trackingId) {
         if (navigator.sendBeacon) {
           navigator.sendBeacon(pingUrl);
         }
 
-        if (window.fetch) {
-          fetch(pingUrl, {
-            method: 'GET',
-            mode: 'no-cors',
-            keepalive: true,
-            cache: 'no-store'
-          }).catch(function () {});
-        }
-
-        var beacon = new Image(1, 1);
-        beacon.decoding = 'async';
-        beacon.src = pingUrl;
+        Promise.race([
+          Promise.all([trackWithFetch(), trackWithImage()]),
+          new Promise(function (resolve) {
+            window.setTimeout(resolve, 1500);
+          })
+        ]).then(redirectNow);
+      } else {
+        redirectNow();
       }
-
-      window.setTimeout(function () {
-        window.location.replace(portfolioUrl);
-      }, trackingId ? 350 : 0);
     }());
   </script>
 </head>
