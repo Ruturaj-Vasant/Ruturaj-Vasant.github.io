@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1ec9b4ce.css",
-    "main.js": "/static/js/main.406ecb58.js",
+    "main.css": "/static/css/main.b8418177.css",
+    "main.js": "/static/js/main.1067ae8a.js",
     "static/media/Engage_Pro_tracker.png": "/static/media/Engage_Pro_tracker.4b4e0a49d78267d48eac.png",
     "static/media/Political_Economy_of_Corporate_Fraud.png": "/static/media/Political_Economy_of_Corporate_Fraud.971970eaa847ab6f81a1.png",
     "static/media/imagenet-performance-benchmark.png": "/static/media/imagenet-performance-benchmark.2e92a66d4c463d51d849.png",
@@ -23,6 +23,7 @@
     "static/media/ProfilePic.jpg": "/static/media/ProfilePic.44cabd1ebaa1e8da6d40.jpg",
     "static/media/MNIST_upload-AI-service-in-container-1.png": "/static/media/MNIST_upload-AI-service-in-container-1.c7105350943d833c1e95.png",
     "static/media/Systematic-Investing-Risk-Analysis-3.png": "/static/media/Systematic-Investing-Risk-Analysis-3.e80e091c62edd1c11500.png",
+    "static/media/BhumiSeva-home.png": "/static/media/BhumiSeva-home.0d72dd342842f42dea9a.png",
     "static/media/Systematic-Investing-Risk-Analysis-5.png": "/static/media/Systematic-Investing-Risk-Analysis-5.b2b8e08cad517e276082.png",
     "static/media/Systematic-Investing-Risk-Analysis-2.png": "/static/media/Systematic-Investing-Risk-Analysis-2.4618a1aa437f063329b0.png",
     "static/media/Systematic-Investing-Risk-Analysis-4.png": "/static/media/Systematic-Investing-Risk-Analysis-4.0d758fe8370efd4dd057.png",
@@ -34,13 +35,13 @@
     "static/media/SNP500-Vol-3.png": "/static/media/SNP500-Vol-3.48adc5013b0e4ff35c64.png",
     "static/media/SNP500-Vol-2.png": "/static/media/SNP500-Vol-2.d6fee40a84ef1b992120.png",
     "static/media/Systematic-Investing-Risk-Analysis-1.png": "/static/media/Systematic-Investing-Risk-Analysis-1.428b6065cee8ddd769e3.png",
-    "static/media/ds-generic.svg": "/static/media/ds-generic.faff49395a0e26aad852076dd3cad285.svg",
     "index.html": "/index.html",
-    "main.1ec9b4ce.css.map": "/static/css/main.1ec9b4ce.css.map",
-    "main.406ecb58.js.map": "/static/js/main.406ecb58.js.map"
+    "static/media/ds-generic.svg": "/static/media/ds-generic.faff49395a0e26aad852076dd3cad285.svg",
+    "main.b8418177.css.map": "/static/css/main.b8418177.css.map",
+    "main.1067ae8a.js.map": "/static/js/main.1067ae8a.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ec9b4ce.css",
-    "static/js/main.406ecb58.js"
+    "static/css/main.b8418177.css",
+    "static/js/main.1067ae8a.js"
   ]
 }
