@@ -284,7 +284,10 @@
 }
 
 /* ===== Fixed Email Rail (desktop) ===== */
-.email-rail {
+/* Scoped like `.container > .social_icons` so `background: transparent`
+   out-specifies the global `.light-mode` / `.dark-mode` background-color
+   the rail otherwise picks up from its own theme class. */
+.container > .email-rail {
   position: fixed;
   right: 24px;
   bottom: 0;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import DownloadIcon from '@mui/icons-material/Download';
@@ -6,8 +6,8 @@ import profileImage from '../assets/images/ProfilePic.jpg';
 import '../assets/styles/Main.scss';
 import { trackEvent } from '../analytics';
 
-function Main() {
-  const [theme, setTheme] = useState("light");
+function Main({ mode = 'dark' }: { mode?: string }) {
+  const theme = mode === 'dark' ? 'dark' : 'light';
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -19,19 +19,8 @@ function Main() {
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    const observer = new MutationObserver(() => {
-      if (document.body.classList.contains("dark-mode")) {
-        setTheme("dark");
-      } else {
-        setTheme("light");
-      }
-    });
-
-    observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
-
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      observer.disconnect();
     };
   }, []);
 
@@ -63,7 +52,7 @@ function Main() {
           <LinkedInIcon />
         </a>
         <a
-          href="/resume/Ruturaj_Tambe_Resume.pdf"
+          href="/resume/Ruturaj_Tambe.pdf"
           download
           rel="noreferrer"
           aria-label="Download Resume"
@@ -106,7 +95,7 @@ function Main() {
                 onClick={() => handleOutboundClick('https://www.linkedin.com/in/ruturaj-tambe-929364169/', 'hero-body-linkedin')}
               ><LinkedInIcon/></a>
               <a
-                href="/resume/Ruturaj_Tambe_Resume.pdf"
+                href="/resume/Ruturaj_Tambe.pdf"
                 download
                 rel="noreferrer"
                 aria-label="Download Resume"
@@ -129,7 +118,7 @@ function Main() {
               onClick={() => handleOutboundClick('https://www.linkedin.com/in/ruturaj-tambe-929364169/', 'hero-mobile-linkedin')}
             ><LinkedInIcon/></a>
             <a
-              href="/resume/Ruturaj_Tambe_Resume.pdf"
+              href="/resume/Ruturaj_Tambe.pdf"
               download
               rel="noreferrer"
               aria-label="Download Resume"

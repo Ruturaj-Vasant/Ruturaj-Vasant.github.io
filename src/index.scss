@@ -130,15 +130,15 @@ p, a, h1, h2, h3, h4, h5, label, button {
   --card-content-bg: #ffffff;
 
 /* Ensure Projects section text is dark in light mode */
-.light-mode .projects-container,
-.light-mode .projects-container p,
-.light-mode .projects-container a,
-.light-mode .projects-container h1,
-.light-mode .projects-container h2,
-.light-mode .projects-container h3,
-.light-mode .projects-container h4,
-.light-mode .projects-container h5,
-.light-mode .projects-container label {
+& .projects-container,
+& .projects-container p,
+& .projects-container a,
+& .projects-container h1,
+& .projects-container h2,
+& .projects-container h3,
+& .projects-container h4,
+& .projects-container h5,
+& .projects-container label {
   color: #0d1116;
 }
 

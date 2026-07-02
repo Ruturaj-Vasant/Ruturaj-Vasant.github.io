@@ -22,7 +22,7 @@ function Footer() {
           onClick={() => trackEvent('outbound_click', { destination: 'https://www.linkedin.com/in/ruturaj-tambe-929364169/', label: 'footer-linkedin' })}
         ><LinkedInIcon/></a>
         <a
-          href="/resume/Ruturaj_Tambe_Resume.pdf"
+          href="/resume/Ruturaj_Tambe.pdf"
           download
           rel="noreferrer"
           title="Download Resume"

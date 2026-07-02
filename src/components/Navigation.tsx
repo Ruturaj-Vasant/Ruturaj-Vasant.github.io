@@ -103,7 +103,7 @@ function Navigation({parentToChild, modeChange}: any) {
             ))}
             <Button
               component="a"
-              href="/resume/Ruturaj_Tambe_Resume.pdf"
+              href="/resume/Ruturaj_Tambe.pdf"
               download
               onClick={() => trackEvent('resume_download', { location: 'nav-desktop' })}
               className="nav-resume-link"
@@ -144,7 +144,7 @@ function Navigation({parentToChild, modeChange}: any) {
           <Box sx={{ p: 2, display: 'flex', justifyContent: 'center', gap: 1 }}>
             <Button
               component="a"
-              href="/resume/Ruturaj_Tambe_Resume.pdf"
+              href="/resume/Ruturaj_Tambe.pdf"
               download
               onClick={() => trackEvent('resume_download', { location: 'nav-mobile' })}
               sx={{ textTransform: 'none', gap: 0.5, display: 'inline-flex', alignItems: 'center' }}

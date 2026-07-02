@@ -1,5 +1,8 @@
 import React from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
+import LanguageIcon from '@mui/icons-material/Language';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
@@ -9,7 +12,7 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import '../assets/styles/Project.scss';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import streak1 from '../assets/images/Streakmate1.png';
 import streak2 from '../assets/images/Streakmate2.png';
 import streak3 from '../assets/images/Streakmate3.png';
@@ -40,6 +43,7 @@ import imagenetImg from '../assets/images/imagenet-performance-benchmark.png';
 import engageImg from '../assets/images/Engage_Pro_tracker.png';
 import gpuScriptThumb from '../assets/images/GPU-creation-through-terraform.png';
 import dsGenericThumb from '../assets/images/ds-generic.svg';
+import bhumisevaImg from '../assets/images/BhumiSeva-home.png';
 import { dsNotebooks } from '../data/dsNotebooks';
 import { trackEvent } from '../analytics';
 
@@ -76,6 +80,77 @@ export function Slideshow({ images }: { images: string[] }) {
           className="zoom"
         />
       </div>
+    </div>
+  );
+}
+
+function CompactScroller({
+  children,
+  id,
+  ariaLabel = 'Scrollable project cards',
+}: {
+  children: React.ReactNode;
+  id?: string;
+  ariaLabel?: string;
+}) {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [canScroll, setCanScroll] = useState(false);
+
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+
+    const updateCanScroll = () => {
+      setCanScroll(scroller.scrollWidth > scroller.clientWidth + 4);
+    };
+
+    updateCanScroll();
+    const frame = window.requestAnimationFrame(updateCanScroll);
+    window.addEventListener('resize', updateCanScroll);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener('resize', updateCanScroll);
+    };
+  }, [children]);
+
+  const scrollByPage = (direction: 'left' | 'right') => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const distance = scroller.clientWidth * 0.85;
+    scroller.scrollBy({
+      left: direction === 'left' ? -distance : distance,
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <div className={`compact-scroller${canScroll ? ' compact-scroller--controls' : ''}`}>
+      {canScroll && (
+        <button
+          type="button"
+          className="compact-scroll-btn compact-scroll-btn--left"
+          aria-label={`Scroll ${ariaLabel} left`}
+          onClick={() => scrollByPage('left')}
+        >
+          <ChevronLeftIcon fontSize="small" />
+        </button>
+      )}
+      <div className={`compact-scroll-viewport${canScroll ? ' compact-scroll-viewport--fade' : ''}`}>
+        <div ref={scrollerRef} className="compact-grid" id={id}>
+          {children}
+        </div>
+      </div>
+      {canScroll && (
+        <button
+          type="button"
+          className="compact-scroll-btn compact-scroll-btn--right"
+          aria-label={`Scroll ${ariaLabel} right`}
+          onClick={() => scrollByPage('right')}
+        >
+          <ChevronRightIcon fontSize="small" />
+        </button>
+      )}
     </div>
   );
 }
@@ -252,7 +327,7 @@ function Project() {
         <p className="section-subtitle">Infra, containers, and GPU benchmarking for AI workloads.</p>
 
         {!cloudExpanded && (
-          <div className="compact-grid">
+          <CompactScroller ariaLabel="Cloud and Machine Learning projects">
             {/* Compact Card: GPU Creation Script */}
             {/* Compact Card: AI in Container */}
             <div
@@ -325,7 +400,7 @@ function Project() {
                 <p className="compact-summary">REST API for model inference; Dockerized with compose, readiness, and logging.</p>
               </div>
             </div>
-          </div>
+          </CompactScroller>
         )}
 
         {cloudExpanded && (
@@ -506,7 +581,7 @@ function Project() {
         {/* Subtitle intentionally removed */}
 
         {!researchExpanded && (
-          <div className="compact-grid">
+          <CompactScroller ariaLabel="Research projects">
             {/* Compact: Lekin */}
             <div
               className="compact-card interactive"
@@ -542,7 +617,7 @@ function Project() {
                 <p className="compact-summary">Governance metrics from SEC filings and WRDS; fraud patterns.</p>
               </div>
             </div>
-          </div>
+          </CompactScroller>
         )}
 
         {researchExpanded && (
@@ -651,7 +726,7 @@ function Project() {
         {/* Subtitle intentionally removed */}
 
         {!personalExpanded && (
-          <div className="compact-grid">
+          <CompactScroller ariaLabel="Personal projects">
             {/* Compact: Systematic Trading: Dynamic Exposure */}
             <div
               className="compact-card interactive"
@@ -667,6 +742,24 @@ function Project() {
               <div className="compact-content">
                 <h3 className="compact-title">Systematic Trading: Dynamic Exposure</h3>
                 <p className="compact-summary">Backtests using volatility/trend signals; dynamic exposure vs baselines.</p>
+              </div>
+            </div>
+
+            {/* Compact: Bhumi Seva */}
+            <div
+              className="compact-card interactive"
+              role="button"
+              tabIndex={0}
+              onClick={() => setPersonalExpanded(true)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setPersonalExpanded(true); }}}
+              aria-label="Expand Personal Projects"
+            >
+              <div className="compact-thumb">
+                <img src={bhumisevaImg} alt="Bhumi Seva platform thumbnail" />
+              </div>
+              <div className="compact-content">
+                <h3 className="compact-title">Bhumi Seva</h3>
+                <p className="compact-summary">Community platform for environmental projects, volunteers, resources, and live map-based impact tracking across India.</p>
               </div>
             </div>
 
@@ -727,7 +820,7 @@ function Project() {
                 <p className="compact-summary">Wallet passes with validation, tracking, and Sheets integration.</p>
               </div>
             </div>
-          </div>
+          </CompactScroller>
         )}
 
         {personalExpanded && (
@@ -774,6 +867,52 @@ function Project() {
               <p>
                 An ML-driven backtesting framework analyzing SPY trading strategies using volatility signals, trend filters, and technical indicators. The framework compares baseline, trend-conditioned volatility scaling (TCVS), and dynamic exposure strategies against mean reversion models. It includes notebooks, performance metrics, and visualizations to optimize trading logic.
               </p>
+            </div>
+
+            {/* Bhumi Seva */}
+            <div className="project">
+              <div className="media-frame">
+                <img src={bhumisevaImg} alt="Bhumi Seva platform thumbnail" className="zoom" />
+              </div>
+              <h2>
+                <a
+                  href="https://bhumiseva.org"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => trackEvent('project_link_click', { project: 'Bhumi Seva', destination: 'https://bhumiseva.org' })}
+                  style={{
+                    verticalAlign: 'middle',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    textDecoration: 'none',
+                    color: 'inherit'
+                  }}
+                >
+                  <LanguageIcon fontSize="small" />
+                  Bhumi Seva
+                </a>
+              </h2>
+              <p>
+                Built Bhumi Seva, a free community platform where people across India can register environmental and heritage projects, find volunteers, offer tools and resources, and track impact on a live map. The platform includes Google OAuth, Supabase Postgres with RLS, admin review, report-based moderation, volunteer approvals, resource offers, multilingual support, and a production-ready public site.
+              </p>
+              <p>
+                <strong>Live Site:</strong>
+                <a
+                  href="https://bhumiseva.org"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="tag category"
+                  style={{ textDecoration: 'none', marginLeft: '0.5rem' }}
+                  onClick={() => trackEvent('project_link_click', { project: 'Bhumi Seva', destination: 'https://bhumiseva.org', source: 'live-site-chip' })}
+                >
+                  Visit Website
+                </a>
+              </p>
+              <div className="tags">
+                <p><strong>Categories:</strong> <span className="tag category">Personal</span> <span className="tag category">Social Impact</span> <span className="tag category">Web Platform</span></p>
+                <p><strong>Technologies:</strong> <span className="tag tech">Next.js</span> <span className="tag tech">TypeScript</span> <span className="tag tech">Supabase</span> <span className="tag tech">Leaflet</span> <span className="tag tech">Tailwind CSS</span></p>
+              </div>
             </div>
 
             {/* StreakMate: Automated Task Journal */}
@@ -925,10 +1064,10 @@ function Project() {
         </div>
         {/* no subtitle by request */}
 
-        {/* Collapsed: show first 4 notebooks */}
+        {/* Collapsed: show all notebooks in a horizontal preview row */}
         {!dsExpanded && (
-          <div className="compact-grid">
-            {dsNotebooks.slice(0, 4).map((n, idx) => {
+          <CompactScroller ariaLabel="Data Science and AI notebooks">
+            {dsNotebooks.map((n, idx) => {
               const colab = `https://colab.research.google.com/github/Ruturaj-Vasant/Understanding_Data_Science_and_AI/blob/main/${n.path}`;
               const nbv = `https://nbviewer.org/github/Ruturaj-Vasant/Understanding_Data_Science_and_AI/blob/main/${n.path}`;
               return (
@@ -966,12 +1105,12 @@ function Project() {
                 </div>
               </div>
             )}
-          </div>
+          </CompactScroller>
         )}
 
-        {/* Expanded: show all notebooks */}
+        {/* Expanded: show all notebooks in a grid (consistent with other sections) */}
         {dsExpanded && (
-          <div className="compact-grid" id="ds-section-content">
+          <div className="projects-grid" id="ds-section-content">
             {dsNotebooks.map((n, idx) => {
               const colab = `https://colab.research.google.com/github/Ruturaj-Vasant/Understanding_Data_Science_and_AI/blob/main/${n.path}`;
               const nbv = `https://nbviewer.org/github/Ruturaj-Vasant/Understanding_Data_Science_and_AI/blob/main/${n.path}`;
@@ -994,7 +1133,7 @@ function Project() {
           </div>
         )}
 
-        
+
 
         {/* Understanding Finance Section (moved after Cloud & ML and DS & AI) */}
         <div id="understanding-finance" className="section-header section-header--accent">
@@ -1033,7 +1172,7 @@ function Project() {
         <p className="section-subtitle">Concise notebooks and analyses to build intuition in markets and risk.</p>
 
         {!financeExpanded && (
-          <div className="compact-grid">
+          <CompactScroller ariaLabel="Understanding Finance projects">
             {/* Compact Card: S&P 500 */}
             <div
               className="compact-card interactive"
@@ -1105,7 +1244,7 @@ function Project() {
                 <p className="compact-summary">Correlations, drawdowns, equal vs inv-vol weights, simple forecasting.</p>
               </div>
             </div>
-          </div>
+          </CompactScroller>
         )}
 
         {financeExpanded && (
